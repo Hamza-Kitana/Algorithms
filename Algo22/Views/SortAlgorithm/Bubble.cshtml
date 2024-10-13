@@ -1,0 +1,295 @@
+﻿<html>
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+<body>
+    <div class="*">
+    </div>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Bubble Sort </h1>
+
+                    <p>
+                        Bubble Sort is a simple sorting algorithm known for its ease of
+                        implementation and low space complexity. It compares adjacent elements in a list and swaps
+                        them if they are in the wrong order, gradually moving the larger elements towards the end of the list.
+                        While it is adaptive to some extent, performing well on partially sorted lists,
+                        Bubble Sort's main drawback is its inefficiency for large datasets,
+                        with a time complexity of O(n^2) in the worst case. Despite its simplicity,
+                        it may not be the optimal choice for large-scale sorting tasks,
+                        and more efficient algorithms like Merge Sort or Quick Sort are often preferred in such scenarios.
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Bubble Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class BubbleSort {
+void bubbleSort(int arr[]) {
+  int n = arr.length;
+  for (int i = 0; i < n-1; i++)
+    for (int j = 0; j < n-i-1; j++)
+       if (arr[j] > arr[j+1]) {                   
+          int temp = arr[j];
+          arr[j] = arr[j+1];
+          arr[j+1] = temp;
+    }
+
+}
+    public static void main(String args[]) {
+        BubbleSort ob = new BubbleSort();
+        int arr[] = {64, 34, 25, 12, 22, 11, 90};
+        ob.bubbleSort(arr);
+        System.out.println("المصفوفة المرتبة:");
+        for (int i=0; i < arr.length; ++i)
+            System.out.print(arr[i] + " ");
+    }
+}
+
+}</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Bubble Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea name="code" id="code" class="area">
+1 procedure bubbleSort(arr: array of integers)
+
+
+2 n = length(arr)
+
+
+3 for i from 0 to n-2
+
+
+4   for j from 0 to n-i-2
+
+
+5     if arr[j] > arr[j+1]
+
+
+6     swap(arr[j], arr[j+1])
+
+
+7 procedure main()
+
+
+8 arr = [64, 34, 25, 12, 22, 11, 90]
+
+
+9    bubbleSort(arr)
+
+
+10   print("Sorted array:")
+
+
+11    for i from 0 to length(arr) - 1
+
+
+12        print(arr[i])
+
+
+</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step ?</h1>
+                    <p>
+                        Comparison:
+
+                        The algorithm starts by comparing the first two elements of the list.
+                        Swapping:
+
+                        If the first element is greater than the second, they are swapped. Otherwise, they remain in their positions.
+                        Iterative Process:
+
+                        The algorithm then moves to the next pair of elements, performing comparisons and swaps iteratively.
+                        Passes:
+
+                        Each pass through the list ensures that the largest unsorted element "bubbles up" to its correct position.
+                        Repeat Until Sorted:
+
+                        The process is repeated until the entire list is sorted.
+                    </p>
+
+                </div>
+                <div class="content">
+
+                    <p>
+                        <img src="~/lib/jquery-validation-unobtrusive/gif/bubble sort.gif" width="450px" height="350px" />
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Easy to Understand:
+
+                        Bubble Sort is a simple algorithm that is easy to understand, making it accessible for learning purposes.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Simple Implementation:
+
+                        It is straightforward to implement Bubble Sort, requiring only a few lines of code.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Effective for Small Lists:
+
+                        While not suitable for large datasets, Bubble Sort can be effective for sorting small lists.
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Inefficient for Large Lists:
+
+                        As the size of the data increases, Bubble Sort becomes less efficient, taking quadratic time in relation to the size of the list.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Doesn't Handle Empty Lists Well:
+
+                        If the list is already empty, Bubble Sort will continue its iterations without any improvement.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not Stable:
+
+                        Bubble Sort is not stable, meaning it does not necessarily maintain the relative order of equal elements in the sorted list.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>
+

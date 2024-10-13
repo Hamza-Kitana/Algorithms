@@ -1,0 +1,285 @@
+﻿<html>
+
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+
+
+<body>
+
+    <div class="*">
+        <h1>Sleep Sort</h1>
+    </div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Sleep Sort </h1>
+
+                    <p>
+
+
+                        Sleep sort is a non-comparison-based sorting algorithm that relies on...
+                        you guessed it, sleep! For each element in the list,
+                        it associates a sleep time equal to the element's value.
+                        Then, it essentially launches independent processes or threads for each element,
+                        and each one simply sleeps for its assigned time before yielding the element.
+                        The elements wake up in ascending order, resulting in a sorted list!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Cocktail Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class SleepSort {
+public static void sleepSortAndPrint(int[] array) {
+        for (final int num : array) {
+            new Thread(() -> {
+                try {
+                Thread.sleep(num * 100);  // تأخير بناءً على قيمة العنصر
+                System.out.print(num + " ");
+                } catch (InterruptedException e) {
+                  e.printStackTrace();
+                }
+            }).start();
+        }
+    }
+
+// Example usage
+public static void main(String[] args) {
+        int[] myArray = {5, 3, 8, 4, 2};
+        sleepSortAndPrint(myArray);
+    }
+}
+
+}</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Cocktail Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea readonly="" name="code" id="code" class="area">
+ SLEEP_SORT
+1. sleep_sort(A)
+2. for i in range from 0 to len(A) - 1:
+3. thread = new Thread
+4. thread.start = lambda: time.sleep(A[i] * 100)
+5. thread.join()
+6. end for
+7. for i in range from 0 to len(A) - 2:
+8. for j in range from i + 1 to len(A) - 1:
+9. if (A[i] > A[j]):
+10. swap(A[i], A[j])
+11. end if
+12. end for
+13. end for
+14. end sleep_sort
+
+}</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step</h1>
+                    <p>
+                        1. Initialize:<br />
+
+                        Start with a list of unsorted numbers.
+                        For each number in the list, create a separate thread or process.<br />
+                        2. Sleep Time: <br />
+
+
+                        Assign each thread or process a "sleep time" equal to the value of the number it represents. So, a thread representing "5" sleeps for 5 seconds, while one representing "100" sleeps for 100 seconds.
+                        <br />
+                        3. Sleeping and Waking Up:<br />
+
+                        Each thread or process independently starts its assigned sleep duration.
+                        Once the allotted time expires, the thread wakes up and outputs its associated number.<br />
+                        4. Collecting Results:<br />
+
+                        An external mechanism (like a main thread) collects the outputs from the waking threads in the order they wake up. Since threads with shorter sleep times wake up first, the collected outputs will be in ascending order.
+                        <br />
+                        5. Sorted List:<br />
+
+                        <br />After all threads have finished sleeping and their outputs are collected, you have a fully sorted list!
+                    </p>
+
+                </div>
+                <div class="content">
+
+                    <p>
+                        <img src="~/lib/jquery-validation-unobtrusive/gif/sleep_sort__craziest_sorting_algorithm__in_1_minute_with_visualisation__code.gif" width="450px" height="350px" />
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅ Uniqueness:
+                        It stands out from the crowd! Sleep sort offers a refreshing approach to sorting,
+                        contrasting with familiar comparison-based methods. It sparks curiosity and invites exploration
+                        of alternative problem-solving strategies.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+                        ✅Educational Value:
+                        As a teaching tool, sleep sort shines.
+                        It demonstrates non-traditional sorting methods, highlighting concepts
+                        like concurrency and operating system scheduling. Students gain a deeper understanding of
+                        computer science through its quirky mechanisms.
+                    </p>
+
+                    <p class="ulAdv" style="color : #06ff06;">
+                        ✅ Humor and Entertainment:
+                        Who doesn't love a bit of computer-related amusement? Sleep sort's unusual
+                        nature and reliance on sleep add a touch of humor and make understanding sorting algorithms more
+                        engaging.
+
+                    </p>
+
+
+
+                </div>
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+
+
+                        ❌ Performance Woes:
+                        Unfortunately, sleep sort is far from a speed demon.
+                        The reliance on actual sleep times makes it incredibly slow, especially for large datasets.
+                        Even sorting small lists can feel like watching paint dry compared to efficient algorithms.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+
+                        ❌Impracticality: Due to its sluggish performance,
+                        sleep sort isn't a viable option for real-world applications. Sorting a vast database with sleep sort
+                        would be like waiting for glaciers to race – simply not practical.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌ Unpredictability:
+                        Sleep sort relies on the operating system's scheduling magic,
+                        which can introduce uncertainties. The exact wake-up order of threads might not perfectly match
+                        the numerical order, adding a bit of unpredictability to the mix.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+    </div>
+    <div id="particles-js"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js
+"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>

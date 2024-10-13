@@ -1,0 +1,320 @@
+﻿<html>
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+<body>
+    <div class="*">
+    </div>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Cycle Sort </h1>
+
+                    <p>
+                        Cycle Sort is an in-place, comparison-based sorting algorithm that works by finding cycles in the permutation.
+                        It is highly effective for situations where writes to memory are costly or limited,
+                        as it minimizes the number of write operations to sort the array.
+                        Cycle Sort is not as widely known as some other sorting algorithms,
+                        but it has specific advantages in certain scenarios.
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Cycle Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class CycleSort {
+public static void cycleSort(int[] arr) {
+nt n = arr.length;
+for (int cycleStart = 0; cycleStart < n - 1; cycleStart++) {
+ int item = arr[cycleStart];
+int pos = cycleStart;
+// Find the position where we put the element
+for (int i = cycleStart + 1; i < n; i++) {
+if (arr[i] < item) {
+pos++;
+ }
+}
+// If the element is already in the correct position
+if (pos == cycleStart) {
+continue;
+}
+// Otherwise, put the element to the correct position
+while (item == arr[pos]) {
+pos++;
+}
+int temp = arr[pos];
+arr[pos] = item;
+item = temp;
+// Rotate the cycle
+while (pos != cycleStart) {
+pos = cycleStart;
+for (int i = cycleStart + 1; i < n; i++) {
+if (arr[i] < item) {
+pos++;
+}
+}
+while (item == arr[pos]) {
+pos++;
+}
+temp = arr[pos];
+arr[pos] = item;
+item = temp;
+}
+}
+}
+// Function to print an array
+private static void printArray(int[] arr) {
+for (int num : arr) {
+System.out.print(num + " ");
+}
+System.out.println();
+}
+public static void main(String[] args) {
+int[] arr = {5, 2, 1, 4, 3};
+System.out.println("Original Array:");
+printArray(arr);
+cycleSort(arr);
+System.out.println("Sorted Array:");
+printArray(arr);
+}
+}
+</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Cycle Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea name="code" id="code" class="area">
+1 procedure cycleSort(arr: array of integers)
+2 n := length(arr)
+3 // Traverse the array to find cycles
+4 for cycleStart from 0 to n - 2
+5 item := arr[cycleStart]
+6 pos := cycleStart
+7 // Find the position where we put the element
+8 for i from cycleStart + 1 to n - 1
+9 if arr[i] < item
+10 pos := pos + 1
+11 // If the element is already in the correct position
+12 if pos = cycleStart
+13 continue
+14 // Otherwise, put the element to the correct position
+15 while item = arr[pos]
+16 pos := pos + 1
+17 temp := arr[pos]
+18 arr[pos] := item
+19 item := temp
+20 // Rotate the cycle
+21 while pos ≠ cycleStart
+22 pos := cycleStart
+23 for i from cycleStart + 1 to n - 1
+24 if arr[i] < item
+25 pos := pos + 1
+26 while item = arr[pos]
+27 pos := pos + 1
+28 temp := arr[pos]
+29 arr[pos] := item
+30 item := temp
+31 // Example usage
+32 arr := [5, 2, 1, 4, 3]
+33 print("Original Array:")
+34 printArray(arr)
+35 cycleSort(arr)
+36 print("Sorted Array:")
+37 printArray(arr)
+</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step ?</h1>
+                    <p>
+                        Cycle Sort is an in-place sorting algorithm that minimizes write operations by finding cycles in the permutation.
+                        It iteratively identifies cycles in the array and rotates them to place the elements in their correct sorted positions.
+                        Starting from the first element, it determines its correct position, swaps elements within the cycle until reaching the correct position, and continues this process for subsequent cycles.
+                        The algorithm repeats until all elements are in their sorted order.
+                        Notably, Cycle Sort is stable, maintaining the relative order of equal elements,
+                        and its in-place nature makes it advantageous in scenarios where memory usage is a concern.
+                        Despite being less known than some sorting algorithms,
+                        Cycle Sort offers efficiency in minimizing write operations,
+                        making it suitable for specific use cases.
+                    </p>
+
+                </div>
+                <div class="content">
+
+                    <p>
+                        <img src="~/lib/jquery-validation-unobtrusive/gif/cycle sort.gif" width="450px" height="350px" />
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Linear Time Complexity:
+
+                        Counting Sort has a linear time complexity of O(n), where n is the number of elements in the input array. This makes it highly efficient for scenarios where the range of input values is not significantly larger than the number of elements.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Stable Sorting:
+
+                        Counting Sort is a stable sorting algorithm, meaning it preserves the relative order of equal elements in the sorted output. This is particularly useful when dealing with records that have multiple keys.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅No Comparison Operations:
+
+                        Unlike comparison-based sorting algorithms, Counting Sort doesn't rely on comparison operations between elements. This can make it more efficient in certain situations.
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Memory Usage:
+
+                        Counting Sort requires additional memory for the counting array, which can be a limitation for large datasets or when dealing with a wide range of input values. This makes it less suitable for scenarios with limited memory.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Limited Applicability:
+
+                        Counting Sort is most effective when sorting integers with a small and known range. Its applicability is limited when dealing with complex data types or scenarios where the range of values is significantly larger than the number of elements.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not In-Place:
+
+                        Counting Sort is not an in-place sorting algorithm since it requires additional arrays for counting and output. This can be a drawback when memory usage is a critical factor.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>
+

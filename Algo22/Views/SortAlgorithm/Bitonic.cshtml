@@ -1,0 +1,307 @@
+﻿<html>
+
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+
+
+<body>
+
+    <div class="*">
+        <h1>Bitonic Sort</h1>
+    </div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Bitonic Sort </h1>
+
+                    <p>
+                        Bitonic Sort is a parallel sorting algorithm that's
+                        particularly efficient for sorting large datasets on architectures with multiple processors
+                        or cores. It works by recursively dividing the input list into smaller bitonic sequences
+                        (sequences that first increase and then decrease) and merging them back together in sorted order.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Bitonic Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class BitonicSort {
+public static void main(String[] args) {
+int[] array = {8, 3, 12, 4, 6, 11, 15, 14, 7, 9};
+System.out.println("Original Array:");
+printArray(array);
+
+bitonicSort(array, 0, array.length, true);
+
+System.out.println("\nSorted Array:");
+printArray(array);
+    }
+
+static void bitonicSort(int arr[], int low, int count, boolean direction) {
+  if (count > 1) {
+   int k = count / 2;
+
+
+bitonicSort(arr, low, k, true);
+
+
+bitonicSort(arr, low + k, k, false);
+
+
+bitonicMerge(arr, low, count, direction);
+        }
+    }
+
+static void bitonicMerge(int arr[], int low, int count, boolean direction) {
+   if (count > 1) {
+    int k = count / 2;
+
+   for (int i = low; i < low + k; i++)
+      compareAndSwap(arr, i, i + k, direction);
+       bitonicMerge(arr, low, k, direction);
+       bitonicMerge(arr, low + k, k, direction);
+        }
+    }
+
+static void compareAndSwap(int arr[], int i, int j, boolean direction) {
+   if (direction == (arr[i] > arr[j])) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+
+static void printArray(int arr[]) {
+    int n = arr.length;
+    for (int i = 0; i < n; ++i)
+    System.out.print(arr[i] + "");
+        System.out.println();
+    }
+}
+
+</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Bitonic Sort  Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea readonly="" name="code" id="code" class="area">
+1 function bitonicSort(arr, low, count, direction)
+2 if count > 1 then
+3  k = count / 2
+4  bitonicSort(arr, low, k, true)
+5 bitonicSort(arr, low + k, k, false)
+6  bitonicMerge(arr, low, count, direction)
+7 function bitonicMerge(arr, low, count, direction)
+8 if count > 1 then
+9 k = count / 2
+10  for i = low to low + k do
+11    compareAndSwap(arr, i, i + k, direction)
+12 bitonicMerge(arr, low, k, direction)
+13  bitonicMerge(arr, low + k, k, direction)
+14 function compareAndSwap(arr, i, j, direction)
+15  if direction == (arr[i] > arr[j]) then
+16  swap(arr, i, j)
+17 function swap(arr, i, j)
+18 temp = arr[i]
+19 arr[i] = arr[j]
+20 arr[j] = temp
+
+}</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step</h1>
+                    <p>
+                        Divide and Conquer:
+                        Divide the input list into pairs of elements.
+                        Recursively sort each pair using a bitonic comparator (which sorts two elements into a bitonic sequence).
+                        Bitonic Merge:
+                        Merge the sorted pairs into larger bitonic sequences.
+                        Continue merging until the entire list is a single bitonic sequence.
+                        Final Reversal:
+                        Reverse the final bitonic sequence to obtain a fully sorted list.
+                    </p>
+
+                </div>
+                <div class="content">
+                    <h1>How To Arrange Step By Step</h1>
+                    <p>
+                        <div class="content">
+                            <h1>How To Arrange Step By Step</h1>
+                            <p>
+                                <img src="~/lib/jquery-validation-unobtrusive/gif/bubble sort.gif" />
+                            </p>
+
+                        </div>
+                    </p>
+
+                </div>
+                <div class="content">
+
+
+                    <p>
+
+                        <img src="~/lib/jquery-validation-unobtrusive/gif/bitonic_sort_old_sequentially_executed_version.gif" width="450px" height="350px" />
+
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Efficient for parallel processing:
+                        Well-suited for sorting large datasets on parallel architectures.
+
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+
+                        ✅Good performance for certain input sizes:
+                        Can be competitive with other efficient algorithms like merge sort or quicksort for specific input sizes.
+                    </p>
+
+
+                </div>
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not as versatile as some algorithms:
+                        Not as widely applicable as merge sort or quicksort due to its specific requirements for parallel processing and certain input sizes.
+
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Higher time complexity:
+                        Has a slightly higher time complexity than merge sort or quicksort, which have O(n log n) complexity.
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js
+"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>

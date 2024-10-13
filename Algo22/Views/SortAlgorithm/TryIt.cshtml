@@ -1,0 +1,545 @@
+﻿
+@model Details
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/algoo.css" asp-append-version="true" />
+</head>
+<body>
+
+   
+    <div>
+        <a asp-action="RandomOrNot" class="enter-button">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 40 27"
+                 class="arrow">
+                <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                <line stroke-width="2"
+                      stroke="white"
+                      y2="1.41537"
+                      x2="10.4324"
+                      y1="14.2433"
+                      x1="1.18869"></line>
+                <line stroke-width="2"
+                      stroke="white"
+                      y2="13.6007"
+                      x2="1.20055"
+                      y1="26.2411"
+                      x1="10.699"></line>
+                <line stroke="white"
+                      y2="14.3133"
+                      x2="1.07325"
+                      y1="13.6334"
+                      x1="0.33996"></line>
+                <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+            </svg>
+            Back
+        </a>
+
+    </div>
+    
+   
+    <form asp-action="TryIt">
+    <fieldset class="checkbox-group">
+            <legend class="checkbox-group-legend">Sellect the algorithm</legend>
+
+
+         @if (Model.box[0] == 0)
+           {
+            <div class="checkbox">
+                <label class="checkbox-wrapper">
+                    <input type="checkbo" class="checkbox-input" asp-for="sort.Insertion" />
+                    <span class="checkbox-tile">
+                        <span class="checkbox-label no"><h3>Insertion</h3> Incremental <br>  In-place   <br>Worst Case: O(N^2)</span>
+                    </span>
+                </label>
+            </div>
+           }
+            @if (Model.box[0] == 1)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Insertion" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Insertion</h3> Incremental <br>  In-place   <br>Worst Case: O(N^2)</span>
+                        </span>
+                    </label>
+                </div>
+            }
+     @if (Model.box[1] == 0)
+    {
+            <div class="checkbox">
+                <label class="checkbox-wrapper">
+                    <input type="checkbo" class="checkbox-input" asp-for="sort.Heap" />
+                    <span class="checkbox-tile">
+                        <span class="checkbox-label no"><h3>Heap</h3> Divide-and-conquer  <br>  Out-of-place  <br>  Worst Case:O(N)</span>
+                    </span>
+                </label>
+            </div>
+    }
+            @if (Model.box[1] == 1)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Heap" />
+                        <span class="checkbox-tile">
+                            <span class="checkbox-label yes"><h3>Heap</h3> Divide-and-conquer  <br>  Out-of-place  <br>  Worst Case:O(N)</span>
+                        </span>
+                    </label>
+                </div>
+            }
+    @if (Model.box[2] == 0)
+    {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Counting" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Counting</h3> Divide-and-conquer  <br>  Out-of-place  <br>  Worst Case:O(N)</span>
+                        </span>
+                    </label>
+                </div>
+    }
+    @if (Model.box[2] == 1)
+    {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Counting" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Counting</h3> Divide-and-conquer  <br>  Out-of-place  <br>  Worst Case:O(N)</span>
+                        </span>
+                    </label>
+                </div>
+    }
+
+
+    @if (Model.box[3] == 0)
+    {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Radix" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Radix</h3> Incremental <br>  Out-of-place  <br>  Worst Case: O(KN)</span>
+                        </span>
+                    </label>
+                </div>
+    }
+    @if (Model.box[3] == 1)
+    {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Radix" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Radix</h3> Incremental <br>  Out-of-place  <br>  Worst Case: O(KN)</span>
+                        </span>
+                    </label>
+                </div>
+    }
+    @if (Model.box[4] == 0)
+    {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Bubble" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Bubble</h3> Incremental <br>  In-place   <br>  Worst Case: O(N^2)</span>
+                        </span>
+                    </label>
+                </div>
+    }
+    @if (Model.box[4] == 1)
+    {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Bubble" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Bubble</h3> Incremental <br>  In-place   <br>  Worst Case: O(N^2)</span>
+                        </span>
+                    </label>
+                </div>
+    }
+
+    @if (Model.box[5] == 0)
+    {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Merge" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Merge</h3> Divide-and-conquer <br>  Out-of-place   <br>   Worst Case: O(N log N)</span>
+                        </span>
+                    </label>
+                </div>
+    }
+    @if (Model.box[5] == 1)
+    {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Merge" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Merge</h3> Divide-and-conquer <br>  Out-of-place   <br>   Worst Case: O(N log N)</span>
+                        </span>
+                    </label>
+                </div>
+    }
+
+
+@if (Model.box[6] == 0)
+{
+    <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbo" class="checkbox-input" asp-for="sort.Selection" />
+            <span class="checkbox-tile no">
+                <span class="checkbox-label"><h3>Selection</h3> Incremental <br>  In-place   <br>Worst Case: O(N^2)</span>
+            </span>
+        </label>
+    </div>
+
+}
+@if (Model.box[6] == 1)
+{
+     <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox-input" asp-for="sort.Selection" />
+            <span class="checkbox-tile yes">
+                <span class="checkbox-label"><h3>Selection</h3> Incremental <br>  In-place   <br>Worst Case: O(N^2)</span>
+            </span>
+        </label>
+    </div>
+}
+@if (Model.box[7] == 0)
+{
+    <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbo" class="checkbox-input" asp-for="sort.Cycle" />
+            <span class="checkbox-tile no">
+                <span class="checkbox-label"><h3>Cycle</h3> Divide-and-conquer  <br> Out-of-place  <br>Worst Case: O(N)</span>
+            </span>
+        </label>
+    </div>
+}
+@if (Model.box[7] == 1)
+{
+    <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox-input" asp-for="sort.Cycle" />
+            <span class="checkbox-tile yes">
+                <span class="checkbox-label"><h3>Cycle</h3> Divide-and-conquer  <br> Out-of-place  <br>Worst Case: O(N)</span>
+            </span>
+        </label>
+    </div>
+}
+
+@if (Model.box[8] == 0)
+{
+    <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbo" class="checkbox-input" asp-for="sort.Cocktail" />
+            <span class="checkbox-tile no">
+                <span class="checkbox-label"><h3>Cocktail</h3> Divide-and-conquer  <br> In-place  <br>Worst Case: O(N^2)</span>
+            </span>
+        </label>
+    </div>
+}
+
+@if (Model.box[8] == 1)
+{
+    <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox-input" asp-for="sort.Cocktail" />
+            <span class="checkbox-tile yes">
+                <span class="checkbox-label"><h3>Cocktail</h3> Divide-and-conquer  <br> In-place  <br>Worst Case: O(N^2)</span>
+            </span>
+        </label>
+    </div>
+}
+
+@if (Model.box[9] == 0)
+{
+    <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbo" class="checkbox-input" asp-for="sort.Tag" />
+            <span class="checkbox-tile no">
+                <span class="checkbox-label"><h3>Tag</h3> Incremental  <br> Out-of-place  <br>Worst Case: O(N log N)</span>
+            </span>
+        </label>
+    </div>
+}
+
+@if (Model.box[9] == 1)
+{
+    <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox-input" asp-for="sort.Tag" />
+            <span class="checkbox-tile yes">
+                <span class="checkbox-label"><h3>Tag</h3> Incremental  <br> Out-of-place  <br>Worst Case: O(N log N)</span>
+            </span>
+        </label>
+    </div>
+}
+@if (Model.box[10] == 0)
+{
+    <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbo" class="checkbox-input" asp-for="sort.Comb" />
+            <span class="checkbox-tile no">
+                <span class="checkbox-label"><h3>Comb</h3> Divide-and-conquer   <br> In-place   <br>Worst Case: O(N log N)</span>
+            </span>
+        </label>
+    </div>
+}
+@if (Model.box[10] == 1)
+{
+    <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbo" class="checkbox-input" asp-for="sort.Comb" />
+            <span class="checkbox-tile yes">
+                <span class="checkbox-label"><h3>Comb</h3> Divide-and-conquer   <br> In-place   <br>Worst Case: O(N log N)</span>
+            </span>
+        </label>
+    </div>
+}
+@if (Model.box[11] == 0)
+{
+    <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbo" class="checkbox-input" asp-for="sort.Pancake" />
+            <span class="checkbox-tile no">
+                <span class="checkbox-label"><h3>Pancake</h3> Incremental  <br>  Out-of-place   <br>Worst Case: O(N^3) </span>
+            </span>
+        </label>
+    </div>
+}
+@if (Model.box[11] == 1)
+{
+    <div class="checkbox">
+        <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox-input" asp-for="sort.Pancake" />
+            <span class="checkbox-tile yes">
+                <span class="checkbox-label"><h3>Pancake</h3> Incremental  <br>  Out-of-place   <br>Worst Case: O(N^3) </span>
+            </span>
+        </label>
+    </div>
+}
+            @if (Model.box[12] == 0)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Stooge" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Stooge</h3> Incremental  <br>  Out-of-place   <br>Worst Case: O(N^3) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+
+            @if (Model.box[12] == 1)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Stooge" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Stooge</h3> Incremental  <br>  Out-of-place   <br>Worst Case: O(N^3) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+
+            @if (Model.box[13] == 0)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Gnome" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Gnome</h3> Divide-and-conquer  <br> In-place   <br>Worst Case: O(N^2) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+            @if (Model.box[13] == 1)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Gnome" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Gnome</h3> Divide-and-conquer  <br> In-place   <br>Worst Case: O(N^2) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+            @if (Model.box[14] == 0)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Bitonic" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Bitonic</h3> Divide-and-conquer  <br> Out-of-place   <br>Worst Case: O(N^2) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+            @if (Model.box[14] == 1)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Bitonic" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Bitonic</h3> Divide-and-conquer  <br> Out-of-place   <br>Worst Case: O(N^2) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+
+            @if (Model.box[15] == 0)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Pigeonhole" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Pigeonhole</h3> Divide-and-conquer  <br> Out-of-place   <br>Worst Case: O(N) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+            @if (Model.box[15] == 1)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Pigeonhole" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Pigeonhole</h3> Divide-and-conquer  <br> Out-of-place   <br>Worst Case: O(N) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+
+            @if (Model.box[16] == 0)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Sleep" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Sleep</h3> Incremental  <br>In-place    <br>Worst Case: O(N) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+            @if (Model.box[16] == 1)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Sleep" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Sleep</h3> Incremental  <br>In-place    <br>Worst Case: O(N) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+
+            @if (Model.box[17] == 0)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Quick" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Quick</h3> Divide-and-conquer  <br>Out-of-place    <br>Worst Case:O(N^2) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+            @if (Model.box[17] == 1)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Quick" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Quick</h3> Divide-and-conquer  <br>Out-of-place    <br>Worst Case:O(N^2) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+            @if (Model.box[18] == 0)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Bucket" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Bucket</h3> Incremental  <br>Out-of-place    <br> Worst Case: O(N + K) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+            @if (Model.box[18] == 1)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Bucket" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Bucket</h3> Incremental  <br>Out-of-place    <br> Worst Case: O(N + K) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+
+            @if (Model.box[19] == 0)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbo" class="checkbox-input" asp-for="sort.Shell" />
+                        <span class="checkbox-tile no">
+                            <span class="checkbox-label"><h3>Shell</h3> Divide-and-conquer <br>In-place and out-of-place variants   <br> Worst Case: O(n^1.5) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+            @if (Model.box[19] == 1)
+            {
+                <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input" asp-for="sort.Shell" />
+                        <span class="checkbox-tile yes">
+                            <span class="checkbox-label"><h3>Shell</h3> Divide-and-conquer <br>In-place and out-of-place variants   <br> Worst Case: O(n^1.5) </span>
+                        </span>
+                    </label>
+                </div>
+            }
+     
+        <button Type ="submit"class="enter-button">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 40 27"
+                 class="arrow">
+                <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                <line stroke-width="2"
+                      stroke="white"
+                      y2="1.41537"
+                      x2="10.4324"
+                      y1="14.2433"
+                      x1="1.18869"></line>
+                <line stroke-width="2"
+                      stroke="white"
+                      y2="13.6007"
+                      x2="1.20055"
+                      y1="26.2411"
+                      x1="10.699"></line>
+                <line stroke="white"
+                      y2="14.3133"
+                      x2="1.07325"
+                      y1="13.6334"
+                      x1="0.33996"></line>
+                <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+            </svg>
+            ENTER
+        </button>
+
+    </form>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

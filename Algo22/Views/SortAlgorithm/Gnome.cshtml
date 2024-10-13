@@ -1,0 +1,289 @@
+﻿
+<html>
+
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+
+
+<body>
+
+    <div class="*">
+        <h1>Gnome Sort</h1>
+    </div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Gnome Sort </h1>
+
+                    <p>
+
+                        Gnome Sort is a variation of the insertion sort sorting algorithm that does not use nested loops.
+                        It was proposed by Iranian computer scientist Hamid Sarbazi-Azad (professor of Computer Science and
+                        Engineering at Sharif University of
+                        Technology) in 2000. Interestingly, it was originally nicknamed "Stupid sort" before being referred
+                        to as Gnome Sort by Dick Grune.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Bitonic Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class GnomeSort {
+public static void main(String[] args) {
+int[] array = {8, 3, 12, 4, 6, 11, 15, 14, 7, 9};
+System.out.println("Original Array:");
+printArray(array);
+gnomeSort(array);
+System.out.println("\nSorted Array:");
+printArray(array);
+    }
+static void gnomeSort(int arr[]) {
+ int index = 0;
+  while (index < arr.length) {
+  if (index == 0) {
+   index++;
+   }
+   if (arr[index] >= arr[index - 1]) {
+    index++;
+      } 
+      else {
+     swap(arr, index, index - 1);
+      index--;
+            }
+        }
+    }
+
+static void swap(int arr[], int i, int j) {
+ int temp = arr[i];
+ arr[i] = arr[j];
+ arr[j] = temp;
+    }
+ static void printArray(int arr[]) {
+    int n = arr.length;
+    for (int i = 0; i < n; ++i)
+    System.out.print(arr[i] + " ");
+    System.out.println();
+    }
+}
+
+</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Gnome Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea readonly="" name="code" id="code" class="area">
+GNOME_SORT
+1. index = 0
+2. while (index < n):
+3. if (index == 0 or A[index] >= A[index - 1]):
+4. index += 1
+5. else
+6. swap(A[index], A[index - 1])
+7. index -= 1
+8. end while
+
+}</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step</h1>
+                    <p>
+                        Start with the first element.
+                        <br /> Compare it to the next element.
+                        <br /> If the elements are in order (current element <= next element), move to the next element and repeat steps 2 and 3.
+                        <br /> If the elements are not in order (current element > next element), swap them and move back one element (similar to a "take a step back" action).
+                        <br /> Repeat steps 2-4 until you reach the end of the list.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advanteg :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+                        ✅ Nutritional powerhouse:
+                        Packed with healthy fats, fiber, vitamins, and minerals, avocados contribute to heart health, digestion, and overall well-being.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Versatile culinary delight:
+                        From creamy guacamole to toast toppings, salads, and desserts, avocados offer endless culinary possibilities.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+                        ✅Rich and satisfying:
+                        Their buttery texture and subtle flavor make them a satisfying addition to any meal.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅ Good source of antioxidants:
+                        Avocados protect cells from damage and may reduce the risk of chronic diseases.
+
+                    </p>
+
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Potential health benefits:
+                        Studies suggest avocados may benefit blood sugar control, brain health, and eye health.ksort for specific input sizes.
+
+                    </p>
+
+
+
+
+
+                </div>
+                <div class="content">
+                    <h1>Disadvanteg :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+
+                        ❌ High in calories:
+                        While healthy fats are beneficial, they are calorie-dense, so moderation is key.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Can be perishable:
+                        Once ripe, avocados have a limited shelf life and can brown quickly.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌ Can be perishable:
+                        Once ripe, avocados have a limited shelf life and can brown quickly.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Potential allergen:
+                        Some people experience allergic reactions to avocados, ranging from mild to severe.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Environmental concerns:
+                        Growing avocados can require significant water resources and may contribute to deforestation.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Price fluctuations:
+                        Avocados can be expensive depending on the season and availability.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js
+"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>

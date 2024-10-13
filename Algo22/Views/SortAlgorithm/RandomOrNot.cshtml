@@ -1,0 +1,74 @@
+﻿
+<html>
+    <head>
+    <link rel="stylesheet" href="~/css/RandomNotRandom.css" asp-append-version="true" />
+
+</head>
+<body>
+
+
+<div class="container bodyy htmll tt">
+    <div class="split left">
+        <h1 class="h11">Random Array</h1>
+        <a asp-action="Random" class="button">Enter</a>
+    </div>
+    <div class="split right">
+        <h1 class="h11"> Manual Array</h1>
+        <a asp-action="NotRandom" class="button">Enter</a>
+    </div>
+        <a asp-action="SizeArray" class="enter-button">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 40 27"
+                 class="arrow">
+                <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                <line stroke-width="2"
+                      stroke="white"
+                      y2="1.41537"
+                      x2="10.4324"
+                      y1="14.2433"
+                      x1="1.18869"></line>
+                <line stroke-width="2"
+                      stroke="white"
+                      y2="13.6007"
+                      x2="1.20055"
+                      y1="26.2411"
+                      x1="10.699"></line>
+                <line stroke="white"
+                      y2="14.3133"
+                      x2="1.07325"
+                      y1="13.6334"
+                      x1="0.33996"></line>
+                <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+            </svg>
+            Back
+        </a>
+
+</div>
+   
+
+<script>
+    const left = document.querySelector(".left");
+    const right = document.querySelector(".right");
+    const container = document.querySelector(".container");
+
+    left.addEventListener("mouseenter", () => {
+        container.classList.add("hover-left");
+    });
+
+    left.addEventListener("mouseleave", () => {
+        container.classList.remove("hover-left");
+    });
+
+    right.addEventListener("mouseenter", () => {
+        container.classList.add("hover-right");
+    });
+
+    right.addEventListener("mouseleave", () => {
+        container.classList.remove("hover-right");
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+﻿<html>
+
+
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+
+
+<body>
+
+    <div class="*">
+        <h1>Pigeonhole Sort</h1>
+    </div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Pigeonhole Sort </h1>
+
+                    <p>
+
+
+                        Concept: Imagine you have a bunch of pigeons (elements) and a set of pigeonholes
+                        (bins) numbered from 1 to N. Each pigeon represents a value in your data, and each hole corresponds
+                        to a possible value your data can take.
+                        The goal is to distribute the pigeons into their corresponding holes, resulting in a sorted list.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Cocktail Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class PigeonholeSort {
+public static void main(String[] args) {
+int[] array = {8, 3, 2, 7, 4, 6, 8};
+ System.out.println("Original Array:");
+ printArray(array);
+ pigeonholeSort(array);
+ System.out.println("\nSorted Array:");
+        printArray(array);
+    }
+static void pigeonholeSort(int arr[]) {
+        int min = findMin(arr);
+        int max = findMax(arr);
+        int range = max - min + 1;
+
+        int[] pigeonholes = new int[range];
+
+        for (int i = 0; i < arr.length; i++) {
+            pigeonholes[arr[i] - min]++;
+        }
+
+        int index = 0;
+        for (int i = 0; i < range; i++) {
+            while (pigeonholes[i]-- > 0) {
+                arr[index++] = i + min;
+            }
+        }
+    }
+
+static int findMin(int arr[]) {
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
+static int findMax(int arr[]) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+static void printArray(int arr[]) {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+}
+
+}</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Pigeonhole Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea readonly="" name="code" id="code" class="area">
+1 pigeonhole_sort(A, min, max)
+2. n = len(A)
+3. pigeonholes = new array of size (max - min + 1)
+4. for i in range from 0 to n-1:
+5. pigeonholes[A[i] - min] += 1
+6. i = 0
+7. for j in range from min to max:
+8. for k in range from 0 to pigeonholes[j - min:
+9. A[i] = j
+10. i += 1
+11. end for
+12. end for
+13. end pigeonhole_sort
+
+</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step</h1>
+                    <p>
+                        Count holes: Determine the range of possible values in your data and create an array of empty "pigeonholes" for each potential value.
+                        <br /> Distribute pigeons: Iterate through your data. For each element, place it in the pigeonhole corresponding to its actual value.
+                        <br />  Collect pigeons: Iterate through the pigeonholes in order (1 to N). Collect all pigeons from each hole and add them to your sorted output list.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advanteg :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+                        ✅Simple and easy to understand:
+                        The concept is quite intuitive, making it a good introductory sorting algorithm.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+                        ✅Fast for specific scenarios:
+                        When n≈N, it can be faster than traditional algorithms.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+                        ✅No comparisons:
+                        Avoids the overhead of element comparisons, leading to potential performance benefits.
+                    </p>
+
+
+
+
+                </div>
+                <div class="content">
+                    <h1>Disadvanteg :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Limited applicability:
+                        Only suitable for data with a specific range of values.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Inefficient for large N:
+                        Performance degrades when the range of possible values is significantly larger than the number of elements.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not stable:
+                        Doesn't guarantee the original order of equal elements will be preserved.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js
+"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>

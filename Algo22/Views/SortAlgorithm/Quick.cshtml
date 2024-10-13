@@ -1,0 +1,255 @@
+﻿<html>
+
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+
+
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Quick Sort </h1>
+                    <p>
+                        QuickSort is a highly efficient and widely used sorting algorithm that falls under the category of comparison-based sorting methods.
+                        Developed by British computer scientist Tony Hoare in 1960, QuickSort operates on the principle of divide and conquer.
+                        This elegant algorithm sorts an array by selecting a 'pivot' element and partitioning the other elements into two sub-arrays
+                        based on whether they are less than or greater than the pivot.
+                        The process is then recursively applied to the sub-arrays, eventually leading to a sorted array.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How  To  Arrange Step By Step</h1>
+                    <p>
+                        Start:
+                        The first element in the list is considered sorted.
+                    </p><p>
+                        Sequential Ordering:
+                        The remaining elements are compared to the first element, and the position of each element in the sequence is determined.
+                    </p><p>
+                        Insertion:
+                        The element is inserted into its appropriate position in the ordered sequence.
+                    </p><p>
+                        Repeat the Process:
+                        Steps 2 and 3 are repeated for the remaining elements until the entire list is sorted.
+                    </p><p>
+                        Result:
+                        In the end, the list is sorted in ascending order.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Quick Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class QuickSort {
+public static void main(String[] args) {
+int[] array = {9, 7, 5, 11, 12, 2, 14, 3, 10, 6};
+System.out.println("Original Array: " + Arrays.toString(array));
+quickSort(array, 0, array.length - 1);
+System.out.println("Sorted Array: " + Arrays.toString(array));
+}
+public static void quickSort(int[] array, int low, int high) {
+if (low < high) {
+int partitionIndex = partition(array, low, high);
+quickSort(array, low, partitionIndex - 1);
+quickSort(array, partitionIndex + 1, high);
+}
+}
+public static int partition(int[] array, int low, int high) {
+int pivot = array[high];
+int i = low - 1;
+for (int j = low; j < high; j++) {
+if (array[j] <= pivot) {
+i++;
+int temp = array[i];
+array[i] = array[j];
+array[j] = temp;
+}
+}
+int temp = array[i + 1];
+array[i + 1] = array[high];
+array[high] = temp;
+return i + 1;
+}
+}
+</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Quick Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea name="code" id="code" class="area">
+1  procedure quickSort(array, low, high)
+2  if low < high
+3  partitionIndex = partition(array, low, high)
+4  quickSort(array, low, partitionIndex - 1)
+5  quickSort(array, partitionIndex + 1, high)
+6  procedure partition(array, low, high)
+7  pivot = array[high]
+8  i = low - 1
+9  for j = low to high - 1
+10 if array[j] <= pivot
+11 i = i + 1
+12 swap(array[i], array[j])
+13 swap(array[i + 1], array[high])
+14 return i + 1
+</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+
+                    <h1>How To Arrange Step By Step ?</h1>
+                    <p>
+                        The algorithm initiates by defining the range of elements to be examined. This is achieved by assigning tags to each element.
+                        Subsequently, elements are compared and exchanged based on the tag values.
+                        The examination and exchange process iterates forwards and backwards until the desired order is achieved.
+                        When no further exchanges occur, the list is considered sorted.
+                    </p>
+
+                </div>
+                <div class="content">
+
+
+                    <p>
+                        <img src="~/lib/jquery-validation-unobtrusive/gif/quick_sort_lr_pointers.gif" width="450px" height="350px" />
+                    </p>
+
+                </div>
+
+
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Simplicity and Understandability:
+                        A significant advantage is the simplicity of the algorithm, making it easy to understand and implement.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Effective for Small Lists:
+                        Insertion Sort demonstrates effectiveness when dealing with small lists, where the sorting time can be minimal.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅No Additional Space Requirement:
+                        Insertion Sort does not require additional space for lists; in other words, it does not need extra space to store temporary data
+                    </p>
+
+
+                </div>
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+
+                    <p class="uldis" style="color:#ff6548;">
+                        🔴Less Efficient for Large Lists:
+                        In the case of large lists, the performance of Insertion Sort can be less efficient compared to some other algorithms like Merge Sort or Quick Sort.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        🔴Time Complexity:
+                        The time complexity of Insertion Sort is O(n^2) in the worst case, meaning it may take a long time for large lists.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        🔴Ineffective for Reverse-Ordered Lists:
+                        If the list is in reverse order, Insertion Sort can be inefficient, requiring multiple movements for each element.
+                    </p>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <nav class="nav-carousel">
+        <div class="btn button-prev">
+            <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+        </div>
+        <div class="btn button-next">
+            <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+        </div>
+    </nav>
+    </div>
+
+    <div id="particles-js"></div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>
+
+

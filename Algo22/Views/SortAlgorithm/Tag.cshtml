@@ -1,0 +1,267 @@
+﻿<html>
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+<body>
+    <div class="*">
+    </div>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Tag Sort </h1>
+
+                    <p>
+                        Tag Sort, also known as sorting by tags, is a type of sorting algorithm that arranges elements in a specified set based on associated tags.
+                        The tags vary for each element and are used to determine the final order.
+                        Tag Sort is a versatile concept that can be implemented in various ways depending on the specific case and requirements.
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Tag Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+class TaggedElement {
+String element;
+int tag;
+public TaggedElement(String element, int tag) {
+this.element = element;
+this.tag = tag;
+}
+}
+public class TagSort {
+public static List<TaggedElement> tagSort(List<TaggedElement> elements) {
+// Sort elements based on tags
+Collections.sort(elements, Comparator.comparingInt(taggedElement -> taggedElement.tag));
+return elements;
+}
+public static void main(String[] args) {
+// Example usage:
+List<TaggedElement> elements = List.of(
+new TaggedElement("Apple", 3),
+new TaggedElement("Banana", 1),
+new TaggedElement("Orange", 4),
+new TaggedElement("Grapes", 2)
+);
+System.out.println("Original Elements: " + elements);
+// Perform Tag Sort
+List<TaggedElement> sortedElements = tagSort(elements);
+System.out.println("Sorted Elements: " + sortedElements);
+}
+}
+}</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Tag Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea name="code" id="code" class="area">
+
+1  function tagSort(elements, tags)
+2  n = length(elements)
+3  # خطوة 1: المرحلة الأولى - التعليم على العناصر
+4  for i from 0 to n-1
+5  elements[i].tag = tags[i]
+6  # خطوة 2: المرحلة الثانية - المقارنة والتبادل
+7  for i from 0 to n-1
+8  for j from 0 to n-i-1
+9  if elements[j].tag > elements[j+1].tag
+10 swap(elements[j], elements[j+1])
+11 # خطوة 3: الحصول على الترتيب النهائي
+12 sortedElements = elements
+13 return sortedElements
+14 # مثال على الاستخدام:
+15 elements = ["Apple", "Banana", "Orange", "Grapes"]
+16 tags = [3, 1, 4, 2]
+17 sortedElements = tagSort(elements, tags)
+18 print("Original Elements:", elements)
+19 print("Tags:", tags)
+20 print("Sorted Elements:", sortedElements)
+</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+
+                    <h1>How To Arrange Step By Step ?</h1>
+                    <p>
+                        The algorithm initiates by defining the range of elements to be examined. This is achieved by assigning tags to each element.
+                        Subsequently, elements are compared and exchanged based on the tag values.
+                        The examination and exchange process iterates forwards and backwards until the desired order is achieved.
+                        When no further exchanges occur, the list is considered sorted.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Ease of Understanding:
+
+                        The algorithm is simple and easy to understand, making it suitable for small-scale applications and learning concepts.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Customized Sorting:
+
+                        Tags can be assigned in a way that reflects specific properties of each element, allowing users to customize the sorting according to their criteria.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Suitable for Specific Classifications:
+
+                        It is suitable when working with data that can be classified based on fixed or specific criteria.
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Limited Applicability:
+
+                        Tag Sort may not be suitable for all types of data or sorting scenarios. Its effectiveness relies on the nature of the data and the specific requirements.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Inefficiency for Large Lists:
+
+                        The algorithm may become inefficient when dealing with large lists of elements. Other sorting algorithms may offer better performance in such cases.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Lack of Generalization:
+
+                        Tag Sort is specific to the concept of using tags for sorting, and it may not generalize well to scenarios where more sophisticated sorting criteria are needed.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>
+

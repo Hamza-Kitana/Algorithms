@@ -1,0 +1,281 @@
+﻿<html>
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+<body>
+    <div class="*">
+    </div>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Selection Sort </h1>
+
+                    <p>
+                        Selection Sort is a simple, comparison-based sorting algorithm that divides the input array into two parts: a sorted portion and an unsorted portion.
+                        The algorithm repeatedly selects the smallest (or largest, depending on the sorting order) element from the unsorted portion and swaps it with the first unsorted element.
+                        This process is iteratively applied until the entire array is sorted.
+                        Selection Sort is straightforward to understand and implement but is generally less efficient than more advanced sorting algorithms for large datasets.
+                    </p>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Selection Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class SelectionSort {
+public static void selectionSort(int[] arr) {
+int n = arr.length;
+for (int i = 0; i < n - 1; i++) {
+// Assume the current index is the minimum
+int minIndex = i;
+// Find the index of the minimum element in the unsorted portion
+for (int j = i + 1; j < n; j++) {
+if (arr[j] < arr[minIndex]) {
+minIndex = j;
+}
+}
+// Swap the found minimum element with the first element in the unsorted portion
+int temp = arr[i];
+arr[i] = arr[minIndex];
+arr[minIndex] = temp;
+}
+}
+// Function to print an array
+private static void printArray(int[] arr) {
+for (int num : arr) {
+System.out.print(num + " ");
+}
+System.out.println();
+}
+public static void main(String[] args) {
+int[] arr = {64, 25, 12, 22, 11};
+System.out.println("Original Array:");
+printArray(arr);
+selectionSort(arr);
+System.out.println("Sorted Array:");
+printArray(arr);
+}
+}
+</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Selection Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea name="code" id="code" class="area">
+1  procedure selectionSort(arr: array of integers)
+2  n := length(arr)
+3  for i from 0 to n - 1
+4  // Assume the current index is the minimum
+5  minIndex := i
+6  // Find the index of the minimum element in the unsorted portion
+7  for j from i + 1 to n - 1
+8  if arr[j] < arr[minIndex]
+9  minIndex := j
+10 // Swap the found minimum element with the first element in the unsorted portion
+11 temp := arr[i]
+12 arr[i] := arr[minIndex]
+13 arr[minIndex] := temp
+14 // Example usage
+15 arr := [64, 25, 12, 22, 11]
+16 print("Original Array:")
+17 printArray(arr)
+18 selectionSort(arr)
+19 print("Sorted Array:")
+20 printArray(arr)
+</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step ?</h1>
+                    <p>
+                        The Selection Sort algorithm sorts an array by repeatedly selecting the minimum element from the unsorted portion and swapping it with the first unsorted element.
+                        This process is iteratively applied until the entire array is sorted.
+                        The algorithm begins by assuming the first index is the minimum and then searches for a smaller element in the remaining unsorted portion.
+                        If a smaller element is found, its index becomes the new minimum.
+                        After completing a pass through the unsorted portion, the minimum element is swapped with the first unsorted element.
+                        This process continues until the entire array is sorted.
+                        Although Selection Sort is simple and intuitive, it has a time complexity of O(n^2), making it less efficient than other sorting algorithms for large datasets.
+                    </p>
+
+                </div>
+                <div class="content">
+
+                    <p>
+                        <img src="~/lib/jquery-validation-unobtrusive/gif/selection_sort.gif" width="450px" height="350px" />
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Simplicity:
+
+                        Selection Sort is straightforward to understand and implement. It is a good choice for educational purposes and situations where simplicity is a priority.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅In-Place Sorting:
+
+                        It sorts the array in-place, meaning it does not require additional memory space for auxiliary data structures.
+
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅No Additional Memory Overhead:
+
+                        Selection Sort does not require additional memory beyond the input array, making it memory-efficient.
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Quadratic Time Complexity:
+
+                        The time complexity of Selection Sort is O(n^2), making it less efficient than other sorting algorithms for large datasets. It does not scale well with increasing input size.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Unstable Sorting:
+
+                        Selection Sort is generally considered unstable. If there are equal elements in the array, their relative order might not be preserved in the sorted output.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not Adaptive:
+
+                        Selection Sort has a fixed time complexity, and its performance does not adapt to the existing order of the input data. It performs the same number of comparisons regardless of the initial order.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>
+

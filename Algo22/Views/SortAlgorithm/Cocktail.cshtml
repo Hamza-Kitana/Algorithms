@@ -1,0 +1,323 @@
+﻿<html>
+
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+<body>
+    <div class="*">
+    </div>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Cocktail Sort </h1>
+
+                    <p>
+                        Cocktail Sort, also known as Shaker Sort or sometimes referred to as Bidirectional Bubble Sort,
+                        is a variation of sorting algorithms. This algorithm improves upon the basic Bubble Sort by examining and sorting elements in both directions,
+                        from the beginning to the end and then from the end to the beginning.
+                        This bidirectional approach is often likened to a "shaking" motion, where adjacent pairs are swapped.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Cocktail Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class CocktailSort {
+// Function to perform Cocktail Sort on an array
+static void cocktailSort(int arr[]) {
+boolean swapped;
+    do {
+    swapped = false;
+// Upward pass
+for (int i = 0; i <= arr.length - 2; i++) {
+    if (arr[i] > arr[i + 1]) {
+    // swap arr[i] and arr[i+1]
+    int temp = arr[i];
+    arr[i] = arr[i + 1];
+    arr[i + 1] = temp;
+    swapped = true;
+                }
+            }
+
+    if (!swapped)
+       break;
+
+// Downward pass
+swapped = false;
+for (int i = arr.length - 2; i >= 0; i--) {
+  if (arr[i] > arr[i + 1]) {
+     // swap arr[i] and arr[i+1]
+      int temp = arr[i];
+      arr[i] = arr[i + 1];
+      arr[i + 1] = temp;
+      swapped = true;
+                }
+            }
+
+        } 
+    while (swapped);
+    }
+
+// Driver method to test the CocktailSort class
+public static void main(String args[]) {
+   int arr[] = {64, 34, 25, 12, 22, 11, 90};
+System.out.println("Original array:");
+  printArray(arr);
+// Sorting the array
+   cocktailSort(arr);
+System.out.println("\nSorted array:");
+  printArray(arr);
+    }
+// Utility function to print an array
+static void printArray(int arr[]) {
+  for (int value : arr) {
+    System.out.print(value + " ");
+        }
+ System.out.println();
+    }
+}
+
+                                </textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Cocktail Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea readonly="" name="code" id="code" class="area">
+1 function cocktailSort(arr):
+2 swapped = true
+3 start = 0
+4 end = length(arr) - 1
+5 while swapped:
+6 swapped = false
+7 // Upward pass
+8 for i from start to end - 1:
+9   if arr[i] > arr[i + 1]:
+10  swap(arr[i], arr[i + 1])
+11  swapped = true
+12 // If no swaps occurred in the upward pass, the list is sorted
+13  if not swapped:
+14   break
+15 // Update the end point for the next pass
+16 end = end - 1
+17 // Reset the swapped flag before the downward pass
+18 swapped = false
+19 // Downward pass
+20 for i from end - 1 to start step -1:
+21   if arr[i] > arr[i + 1]:
+22    swap(arr[i], arr[i + 1])
+23    swapped = true
+24 // Update the start point for the next pass
+25  start = start + 1
+
+}</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step ?</h1>
+                    <p>
+                        Initialization:
+                        The algorithm begins by defining the range of elements to be inspected.
+                    </p><p>
+                        Forward Pass:
+                        Elements are checked from the start to the end.
+                        In each iteration, adjacent elements are compared, and they are swapped if the current element is greater than the next.
+                    </p><p>
+                        Narrowing the Range:
+                        The inspection range is reduced by one to ensure thorough examination.
+                    </p><p>
+                        Backward Pass:
+                        Elements are inspected from the end to the beginning.
+                        The current element is compared with the previous one, and a swap occurs if the current element is smaller.
+                    </p><p>
+                        Expanding the Range:
+                        The inspection range is expanded by one to include subsequent stages of scrutiny.
+
+                        Iteration:
+                        The above steps are repeated until no further exchanges are required.
+
+                        Conclusion:
+                        If no exchanges happen in a complete pass, it indicates that the list is sorted.
+                    </p>
+                </div>
+                <div class="content">
+
+                    <p>
+                        <img src="~/lib/jquery-validation-unobtrusive/gif/cocktail shaker sort (1).gif" width="450px" height="350px " />
+                    </p>
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Simple Implementation:
+
+                        Cocktail Sort is relatively easy to understand and implement. It is suitable for educational purposes or situations where a simple sorting algorithm is needed.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Stable Sorting:
+
+                        Like Bubble Sort, Cocktail Sort is a stable sorting algorithm. It preserves the relative order of equal elements in the sorted list.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Adaptive Nature:
+
+                        Cocktail Sort can be adaptive, especially in cases where the list is partially sorted. It can reduce the number of passes required to sort the list.
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Inefficiency for Large Lists:
+
+                        The time complexity of Cocktail Sort is O(n^2) in the worst case, making it inefficient for large lists. The number of comparisons and swaps grows quadratically with the size of the list.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not Ideal for Modern Applications:
+
+                        In practical applications, more efficient sorting algorithms like Merge Sort or QuickSort are preferred over Cocktail Sort. These algorithms generally have better average and worst-case time complexities.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Lack of Performance Guarantees:
+
+                        Cocktail Sort does not provide performance guarantees in terms of time complexity. Its efficiency heavily depends on the initial order of the elements in the list.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js
+"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>
+
+

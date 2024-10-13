@@ -1,0 +1,289 @@
+﻿
+
+.parallax {
+    position: relative;
+    width: 100vw;
+    height: 50vw;
+    transform-origin: bottom center;
+    will-change: transform;
+    transform: translate3d(0, calc(var(--pct) * 35%), 0) scale3d(calc(var(--pct)/2 + 1), calc(var(--pct)/2 + 1), 1);
+    div
+
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    transform-origin: bottom center;
+    transform: translate3d(0, 0, 0);
+    &.p1
+
+{
+    transform: translate3d(0, calc(var(--pct) * -20.0%), 0);
+}
+
+&.p2 {
+    transform: translate3d(0, calc(var(--pct) * -17.5%), 0);
+}
+
+&.p3 {
+    transform: translate3d(0, calc(var(--pct) * -15.0%), 0);
+}
+
+&.p4 {
+    transform: translate3d(0, calc(var(--pct) * -12.5%), 0);
+}
+
+&.p5 {
+    transform: translate3d(0, calc(var(--pct) * -10.0%), 0);
+}
+
+&.p6 {
+    transform: translate3d(0, calc(var(--pct) * -7.5%), 0);
+}
+
+&.p7 {
+    transform: translate3d(0, calc(var(--pct) * -5.0%), 0);
+}
+
+&.p8 {
+    transform: translate3d(0, calc(var(--pct) * -2.5%), 0);
+}
+
+}
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    margin: 0;
+    background-color: #C48D5D;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+header {
+    overflow: hidden;
+    box-shadow: inset 0 -4em 4em -4em #2b110e;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    border-top: 1px solid lighten(#2b110e, 5%);
+    padding: 2em 1em 4em;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald:200');
+
+.logo {
+    fill: rgba(#fff, 0.3);
+    width: .72em;
+    vertical-align: top;
+    margin: 0.15em 0.15em 0.15em 0;
+}
+
+.separator {
+    fill: rgba(#fff, 0.1);
+    height: 2em;
+    vertical-align: top;
+    margin: 1em 0 0;
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+    font-family: Oswald;
+    font-size: 2em;
+    line-height: 1;
+    font-weight: 200;
+    color: rgba(#fff, 0.7);
+}
+
+h2 {
+    margin: 2em 0 0;
+    font-family: Oswald;
+    font-size: 1.6em;
+    line-height: 1;
+    font-weight: 200;
+    color: rgba(#fff, 0.7);
+}
+
+p, a {
+    font-family: Open Sans;
+    color: rgba(#fff, 0.7);
+}
+
+
+.no-iframe {
+    position: absolute;
+    top: 2em;
+    right: 1em;
+    display: none;
+    transition: 200ms;
+    z-index: 1;
+    font-size: .7em;
+    padding: 0.5em;
+    text-decoration: none;
+    background-color: #2b110e;
+    opacity: 0.5;
+    &:hover
+
+{
+    opacity: 0.7;
+}
+
+}
+
+
+
+
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.ad {
+    display: flex;
+    padding: 0 35px;
+    justify-content: center;
+    min-height: 60vh;
+    top: 0%;
+    background: linear-gradient(to left top,#C48D5D,#C48D5D);
+}
+
+.wrapper {
+    max-width: 1100px;
+    width: 46%;
+    position: relative;
+}
+
+    .wrapper i {
+        top: 30%;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        font-size: 1.25rem;
+        position: absolute;
+        text-align: center;
+        line-height: 50px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+        transform: translateY(-50%);
+        transition: transform 0.1s linear;
+    }
+
+        .wrapper i:active {
+            transform: translateY(-50%) scale(0.85);
+        }
+
+        .wrapper i:first-child {
+            left: -55px;
+        }
+
+        .wrapper i:last-child {
+            right: -55px;
+        }
+
+    .wrapper .carousel {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 3) - 12px);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        border-radius: 8px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+    .carousel.dragging .card {
+        cursor: grab;
+        user-select: none;
+    }
+
+.carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel .card {
+    scroll-snap-align: start;
+    height: 200px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+    .carousel .card .img {
+        background: #8B53FF;
+        height: 148px;
+        width: 148px;
+        border-radius: 50%;
+    }
+
+.card .img img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+}
+
+.carousel .card h2 {
+    font-weight: 500;
+    font-size: 1.56rem;
+    margin: 30px 0 5px;
+}
+
+.carousel .card span {
+    color: #6A6D78;
+    font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+    }
+}

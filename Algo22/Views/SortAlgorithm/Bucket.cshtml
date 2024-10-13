@@ -1,0 +1,312 @@
+﻿<html>
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+<body>
+    <div class="*">
+    </div>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Bucket Sort </h1>
+
+                    <p>
+                        Bucket Sort is a distribution-based sorting algorithm that works by dividing the input array into a finite number of buckets,
+                        each containing a range of values.
+                        Each bucket is then sorted, typically using another sorting algorithm or recursively applying the same bucket sort,
+                        and the sorted buckets are concatenated to obtain the final sorted array.
+                        This algorithm is particularly useful when the input values are uniformly distributed across a range.
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Bucket Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class BucketSort {
+
+    public static void bucketSort(double[] arr) {
+        int n = arr.length;
+
+        // Create buckets
+        ArrayList<Double>[] buckets = new ArrayList[n];
+        for (int i = 0; i < n; i++) {
+            buckets[i] = new ArrayList<>();
+        }
+
+        // Distribute elements into buckets
+        for (double num : arr) {
+            int bucketIndex = (int) (n * num);
+            buckets[bucketIndex].add(num);
+        }
+
+        // Sort each bucket using a simple sorting algorithm (e.g., insertion sort)
+        for (ArrayList<Double> bucket : buckets) {
+            Collections.sort(bucket);
+        }
+
+        // Concatenate the sorted buckets to obtain the final sorted array
+        int index = 0;
+        for (ArrayList<Double> bucket : buckets) {
+            for (double num : bucket) {
+                arr[index++] = num;
+            }
+        }
+    }
+
+    // Function to print an array
+    private static void printArray(double[] arr) {
+        for (double num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        double[] arr = {0.8, 0.4, 0.6, 0.2, 0.9, 0.1, 0.7, 0.5, 0.3};
+
+        System.out.println("Original Array:");
+        printArray(arr);
+
+        bucketSort(arr);
+
+        System.out.println("Sorted Array:");
+        printArray(arr);
+    }
+}
+
+
+                                </textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Bucket Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea name="code" id="code" class="area">
+1  procedure bucketSort(arr: array of real numbers between 0 and 1)
+2      n := length(arr)
+3
+4      // Create buckets
+5      buckets := array of n empty lists
+6
+7      // Distribute elements into buckets
+8      for i from 0 to n - 1
+9          index := floor(n * arr[i])
+10         append arr[i] to buckets[index]
+11
+12     // Sort each bucket (using insertion sort in this example)
+13     for i from 0 to n - 1
+14         insertionSort(buckets[i])
+15
+16     // Concatenate the sorted buckets to obtain the final sorted array
+17     sortedArr := empty array of size n
+18     index := 0
+19     for i from 0 to n - 1
+20         for j from 0 to length(buckets[i]) - 1
+21             sortedArr[index] := buckets[i][j]
+22             index := index + 1
+23
+24 // Example usage
+25 arr := [0.8, 0.4, 0.6, 0.2, 0.9, 0.1, 0.7, 0.5, 0.3]
+26
+27 print("Original Array:")
+28 printArray(arr)
+29
+30 bucketSort(arr)
+31
+32 print("Sorted Array:")
+33 printArray(arr)
+
+</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step ?</h1>
+                    <p>
+                        The Bucket Sort algorithm organizes elements into buckets based on their values,
+                        distributing them into a finite number of containers. Each bucket is then individually sorted,
+                        and the sorted buckets are concatenated to obtain the final sorted array.
+                        The process starts by iterating through the input array and placing each element into its corresponding bucket based on predefined criteria.
+                        Once the elements are distributed, each bucket is sorted using a chosen sorting algorithm, often insertion sort.
+                        Finally, the sorted buckets are concatenated to produce the fully sorted array.
+                        Bucket Sort is particularly effective when the input elements are uniformly distributed.
+                        Its step-by-step execution involves distributing, sorting, and concatenating,
+                        making it a straightforward yet efficient sorting approach for certain scenarios.
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Simple and Intuitive:
+
+                        Bucket Sort is relatively easy to understand and implement. Its simplicity makes it a good choice for educational purposes.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Effective for Uniformly Distributed Data:
+
+                        It performs well when the input data is uniformly distributed across a range. In such cases, the elements are evenly distributed into buckets, leading to efficient sorting.
+
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Parallelization Potential:
+
+                        Due to the independent sorting of each bucket, Bucket Sort has the potential for parallelization. This makes it suitable for parallel computing environments, where the sorting of different buckets can be performed concurrently.
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Sensitivity to Input Distribution:
+
+                        The performance of Bucket Sort can degrade when the input data is not uniformly distributed. If the data is skewed towards specific values, some buckets may contain significantly more elements than others.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Space Complexity:
+
+                        The space complexity of Bucket Sort is influenced by the number of buckets used. If the range of values is large, it may result in the creation of many buckets, leading to increased space requirements.
+
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not Suitable for Small Ranges:
+
+                        When the range of values is small, and the data is not uniformly distributed, the advantages of Bucket Sort diminish. In such cases, other sorting algorithms like quicksort or mergesort may be more efficient.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>

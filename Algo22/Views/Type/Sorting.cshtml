@@ -1,0 +1,241 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raz</title>
+    <link href="~/css/Sorting.css" rel="stylesheet" />
+
+
+
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" style="position:absolute;top:0;left:0;width:0;height:0;overflow:hidden;" focusable="false" aria-hidden="true">
+
+        <style>
+            mask {
+                fill: white;
+            }</style>
+
+
+        <mask id="m1">
+            <path d="M480 215.9h-3.9v3.3l-18-.7V240H480zM405 240l-.6-85.5-4.4-3.6-6.9-.7h-6.2v.5l-17.7-.5v-1h-1.3v1l-.7-.1-.6 1-4.3.1v-1l-.7-.1v-1.3l-.5-.5h-1v.8l-1.5-.1v.7l-.6-.1v-1.3l-1.3.3v1.2l-1.8-.2-3.1-.1-1.8-1.5-1.9 1.2v.7l-6.3-.1-.8-.2.4 90.4zm-181.5 0v-86.5l1-1.2h.4v-9.5h2.6v-4.5l.7-.4v-5.1l3.9-1.1h.9v-1.2h-.7v-1.3l2.8-1v-2.7l1.3-.9h5.1v2.5l.8.1 1.3.9v3.7l3.2-.2v2l.3 3.4.4.2v4.6l2.3.1.3 6.7 1.1.2v2.6l.9.1v51.1l6.3.3.7.2v10l2.3.1v6.6l.7.1v10.3h.4v9.8zm-128.8 0l1.8-1.2v-1.5h.6v-.7l2.3-1.5h.4v-2.9l.8-.9h3.6v3.6h3l8.3.4v-25.4l2.4-1.3v-6.1l1.5-.7 3.4-.9v-4l.4-.4.4-3.1h2.6v-1.5l1.1-.5h1.9v-.5h.6v-2.6h1v-.7h7.8v3l-.5.5v.7l.5.1.5.7 2.2-.2v-.3h.6v.4l.5-.1.5-.4h.3v3.7l.7.1v5.8l4.6-.3.5 15.1 1.1.2.3 23.4zM0 224.5l5.2-3.3 34.4 2.6v2.6h1.2V240H0zm267.2 15.2v-3.8l1.7-2.8h2l.3-11.8 1-2.2h3.8v-1.2h6.3l.6-4.3h4.1v-1.8h11.3v2l2.8.6v3.6l.7 1.1h6.3l.9.1v2h4.1v14.7l4.1-.1v1l6 .1v3.1h2.8l-.4-22.5h3.5v-1.8l3.7-.1v1.3h3.1V240h-68.7z" />
+        </mask>
+        <mask id="m2">
+            <path d="M480 149h-10.9v64.1l-5.7.8v12.6h-6.6V175l-.6-.8v-1.5l-2-1.1-.8-.1v-1.2l.5-.8-2.7-1.8-1.9.1v-.4l-9-.2v.5l-1-.1v3.8l-1.2.1v1.3l-1.5-.2v52.2l-9.8-.4-.3 2.1h-1.9v-7.6l-.4-.5v-1.8l-1.1-1.3v-2.9l-1.3-1.7v-3.1l-1.2-1.7v-3.7l-3.3-3.6-1.5-.4v-2.8l-1.9-1.4-.2-1.7-2-.1v.6l-1.7.1v-1l-2.1-.1v1.3l-.5-.1-.3 1-.6.4v3.4h-1.8l.3 42.2h75zm-256.5 91v-9.5h-3.3v-35.2l-1.9-1.3v-2.7l-.5-.4v-2.3h-1.4l-2.8-4.8v-1.1h-3.3l-.7.5v1.2l-2.5 4.2h-.7l-1.3 1.1v-8.4l-10.2-.4v.3l-8-.3-3 1.8v25.5l-.5-.1v-6.7l-.8-.3-21.7-.9-3.8 2.5V240zm-96.7-48.4v-19.9h-.7l-.3-.8h-1l-.9.5h-1.3l-.8-.5-1.1.6-11.3-.6-12.3 4.5-.3 35.8-3.2-2.6-1.4-.1v-.7h-3.3l-1.2.2-2.8 4.3v.9h-1.2v3.2l-2.5 1.2v4.9l-2.2.9v10.7l-3.4-.3v-7.9l-7.2-.3V224l-6.6-3.7-9.9 4.6-6.1 3.4v2.3l-3.6.6-1.4-.2v9h86z" />
+        </mask>
+        <mask id="m3">
+            <path d="M0 134.8h7.8V133h4.8v1.5l11.4-.1 3.2 1.5h4.3v4.7h1.3l-.2 47.2 6.7-2.3 2.4-.2h.6v-41.2l.3-.1v-4.7l-.2-.5-.6-1.7.6-.5.5-.8.5-.2.2-1.5 2.5-.8.3-.8 2.1-.2 4.9-.3h1.7l.3-.5h13.5l6.3 2.5.9.1v.9h4.4v7.9l.3.1v1.6l-.4.1.4 21.8.2.3.2 26.5h1.4v8.6l2-1.2h3.7v-39.5l1.4-.2 1.6-.4v-1.3l.4-.3v-7.1l.6-.2V149l.5-3.1.3-.7.6.1.4 3.6.5-.2v-1.4l.7-2.6.5.1.2 2 .2 2.2.3-.2v-2.2l.3-1.4h.7l.4 3.4.7-.4v-3h.8l.3 3.6.5-.1.5-2 .3-1.3.5.2v2.9l.6-.3v-2.7h.9v3.3l1.3.6v2h.4v7.1l.6.2v1.7l2-.1V240H0zm118.7 36.6v-10.8l11.7-3.5h3.5l1.9-.4h2.6v1l3-.2 1.4-.8h6.8v.7l17.2.5V240H118zm97.7 17.2l1.3-12.9h5.8l28.6-5.8 23.5.5v30.3l4.7-5.1 5.6 4.4v.1h.6l.5 11.7V240h-70.6zm93.1 32.6l-.2-8.1.7-2.3h1.3l3.1-5.5 3.2 3.3h2.4l.6 20.4h1.4l.5-.9 3.3-.2.2 12.1h-16.7zm94.9-60.3l1.8 1.9v6.7h12.5v-1.9l1.2-.4 7.6 1.1.7 5.1 2.1.9v4.9h1.4l.9 1.1h2.6l1.4 1.4 20.2 29.4h.8l.3-5.3.4-.3.3-9.4.4-.1v-9.3l.6-.1v-8.5h.2v-5.2l.6-.3 6.1.2.7.6.3.4v.7l.7.1v.4h.9v65h-64.7z" />
+            <path d="M80.5 140.6l1.3-.4h1.4l.4.6v1.8h2.8l.9.5v5.9h4.3l3.4-1.8.4 1.8v91H73.8z" />
+        </mask>
+        <mask id="m4">
+            <path d="M32.7 148.3l3.1 5.4.7 3 2 1.1-1.2 7.2 5 1 65-2.5 2.4-.5v-6.3l3.5-1.4 4.1-.1v4.8l1.8.5 19.3-3.8v-22.5l.9-6h16.3l.8.5.4 3.9.8 18.9 4 .2 3.5-.1v-8.4l.5-.6v-1l1.2-.4.3-.6.9-.4 2.6-.1.4.4h5.2v13.7l.4.3v2.3l3.2-.2v2.7l2.9-.1.3 20.1 2.7.2v-20l.7-.5.3-10.4-1.1-1.1 1.4-.9v-1.8l1.4-.3v-5.7l-.2-.5 5.4-6.6 1.9-.3 4.3 5.8.7.1.2 4.6h1l.3.9v1h.3l.2 1.7h.5l.3.5-.7 1-.1 8.2.6.9.2 1.4V240H32.7zm231.1 21.9v-8l1.9-1.5 5.2.3v-.9l.7-.3h1.8v1.1h3.8l5.8.1-.3 7.3.3 11.3v13.3h4v3.3h11.1v-1.4l1.3-1.9 6.7-.1v8.8h1.7v-9.8l.6-1.9 2-.3.7 1.8h1.4v-3.8l5.1-.1 1 3h1.1v.7h2.8l.2-.9.9-.4 2 .1 3.4-.1v-1.8l7.4-.1 2.1.6v3.5h.9v-2.6l1.2-1.5h.6l1.3 52h-78.7zm156.4-2.9v-10.2h11v.4l1.3.5v.8l1.3-.2.3 8.2 5.7-.3 1.3 1.7h8v-2.1l.3-3.1 1.7-.4 1.2-.4v-3l3.5.2 13.7.2V240h-49.3z" />
+        </mask>
+        <mask id="m5">
+            <path d="M32.7 144.9h1.9v-2.6H36v-1.9l1.3-.3v-1.6l.4-.2v-.7h3l.2.8.5.1v.5l.6.4h.9l37.6-4.4h1.8v1.2l2.3-.2v1.2l2-.2v-2l1.7-.2H91v1.9l2.2-.1v1.8l1.6.1v.7l.6-.2v2.2l1-.3 4.4.1v1.3l.4.6 2.8-.1v-4.1l1.8-.7v-.8l2-.3 1.8.1v1l1.7-.1v.7l1.1-.1.2-.5h.4v-.6h1.2v-.7l.4.1v-.3h1l.4.4.3 1.6 1.7-.1v-.2l2.6-.1v-2.3h2.7v2.3l2.6-.1v.9l3.2.1.4-.4 1.2-.1v.6h1.5v-.5l1.1.2v.7l.4-.2v-.4l2.7.1v.9h2.3V240H33zM157.5 149.2l1.5-.8v-6.9h1.4v-.6h2v-2.2h2.1l1.4-1.1h2.1v1.8l1.1.8 11.4-.1 1.4.8v1.5l1 .2.7.2v2.3l2.7.4.7.1 16.3.4h5.4l.5-2.6v-2.1l1.1-.8 1.5-.3v-2l3 .1h1.6v2.5l1.4.2.4 1.6h.9V140l3.1-1.5 1.3-.5.7-3.1 2.8-.7.5-4.3h1.9v-3.3l2.2-6.6.5-2.8.5-2.2 1.3 4.6 1.9 5 .1.3.5-.3v-6.9l14-.5.8.5v10.1l.5-7.1 1.1-.7h2.8v3l2.4-.1.3 2.3v6.5l1.7-1 2.5-.1v-3.8l.3-2.2.5-1.7h2.6v1.7l.6.2v1.7h.6v1.3l.4.6.5.2v1.6l.4.1v.6h1.5l.3-7.1 1.1-.9 11-.1.7 38.2v10l2.3-3.2v-2.1l2.7-3.2 2.3-.3v-2.4l1-1.3V152l1.3-1.2h.9V94.3h.7V80.8h1.1v.7-6.2l.8-.5v-2.7h1.1v-2h.9v-2.3h.6l.4-.9.4 1.7.6-.2v-3.3h.3v1.2h.7l.4-5.4h.4v-8.5l.8-.6V50.6l.8-.7v-7.4l.3-.3v-2.4l-.3-.4.3-.2v-.9l-.3-.2h.3v-.8l-.3-.9.5-.3v-9.3h.4v3.8l.4.2v5.4l.3.2-.2.5.2.5-.2.3.2.5-.3.5.3 1.1-.3.5.2 2.2.5.4v7.2l.4.5.3-.5v.9l-.2.5-.2.4.3.4.9.5-.5.4.2.8.3 8.8.2.3v2.3l.6.3v1l.4-.4v1.1l.3.1.5-2.5v3.4l1.7.6v1.1l.8.6-.2.7.2.9.7-.5.6.2.2 2.6.7-.1.2 5.5v.5l1.1.4v.7l.4.4v12l.8.2V151h2.4l.8 7.1v4.9l3.4-.5 3.4.3.8.8 1 .2v8.1h2.5l1.3-.9h1.2v-1.1h2.2v1l2.9-1v-3l2.1-.1v-7h.8l4.6-10v-14l9-.6 5.6 1.7-.1 11.4 8.3.7 20.4 3.6 12.9-.3v-4.8l9.7-.9 1.1 2.4 3.1 4.5 1.3-1 3.9-.4 1.3 1.4 3.5-.4v-32.5l3.4-.6 3.1.9h1.3l1-.9.6 1.5 1 .1v-.8h3.5v3l1.1.4v14.6l1.2.3.5-.7 4.6 3.4.6 1.6v3.1l1.3.1v-1.2l1.3.2 1.5-1 6.8.2 2.8-.2 2.4-.5v-1.7l7.4.1v1.5l2.6.4.6 1.5h5.8V240H157.5z" />
+        </mask>
+        <mask id="m6">
+            <path d="M178.5 126.2h2.6l.7.9 3.2-.5v1.6h2.1l.7 1.9h1.9l1.9-1.9 3.2 3.3 1.7-.7v-4.3l2.1-.3.6-1.6h2.7l.4.9 1.5.1v-1.3h10.5l1.1 1.5 1.6-.5 1.8.3.9.1.4-2.9.4-.6.3-2.2 1.2-2.7h.8l1.2 2.3.8 1.8.8.6v2.4l1.2-1.7.8.2.6 1.1 1.2-.9 1 .4 4.6-.8 1.8-.1 14.4-.7 2.3-6.2V114l.5-.5v-1.9l.8-4.7 1.2 4v2.7l.3.5.5.7v1l1 6 1.4-.1.6-4.9.9-.4v-4.8l4.1.1.4 5.8 1.2.3.5 1.4h.9v12.3l14.7-.7 3.4-.2.3-1.4 3 .2v1.2l3.6-.1v-1.1l23.4-1.2h1.7l.3 2.9 5.6.4v3.5h5l.4 1.7h2.4l1.6 2.1.3 2.4h1.7l.5-1.3 1.7-.6V137l1.3-.4 1.1-2.4 1.5.4.5 2.3 2.4-.2 1.4-.9 12.5.4v-2.8l3.1-.4v-2.7l8.9-.2.3 3.7.8.2v1.6h2.3v2.6l.6.2v11.9l4.5.2v-20.7l.8-.4v-1.2l.7-.1v-3.2l4.7.7.3 3.6 1 .7v.9l.7 1.2.5 4.8 1.9-.6v-17.1l1.5-.3 1.4-.6v-1l.8-.6 1.9.8.4 3.5 1.6-.1.8.7v15.7l1.2-.2.6-.7v-8.8h4.5l3.9.6 2.2.6V140l1.9.9 1.7-.1.8-.4v-1.2l1-.3.3-.5 1.4-1.3.9 1.4 1.1.6.3 1 2.9.1v-3.8l3.3-.2 15 1 3.8-.5v-3.3l3.2-.7.6-1.9h4.7l.8.4h1.5v1.8h1.3l.5 1.5 1.4-.1V133l-.6-.6.6-.5v-2.8l1.5-.4v3.1l1.3-.4v-1.5l2.3-.1 2-.2h4.4l.7.4 1 .1 1.3.5v1.3l1.9-.1.4.8h1.2v-.9l1.3-2.1v-.7l1.7-.2.6.8V240L0 236V131.5h2.3l.8-1.4h.6v-1.6l1-1.3h5.1l.5-1.4v-4.6l.7-.4h.6v5l.4.4v1l1.8-.1 1 .2.5.5.6-.6 1.4-.1v-5.9l1.2-.4.4 6.1 1 .2 2.9-.2 3.1-.1 3.4-.6H32l.7.3 2.4.2v-1.5l.9-.1.3-.8 2.5-.2.4.3 2.9-.4 7.1-1v-1.5l7-.7 1 1.1.7.5.5 3.8h2.5v4.8l13.3.5 2.4 1.9h5.5l1.7-.5 4.7-.3 2.5-.1.6-2.7 1.2.1.4-2.8 1.4-2 2-.1 1.2 3.2v3.3l2.3-2.1 4.7-.3h7.6l3 1.3 4.7-.8h6.7l3.3-.1 3.4.4 3-.5 9.6-1.2.8-5.3 3.9-.8 3.8.4v1.6l6-.6 1.9-1.6 1.5.1 1.1 2.6v3.6h4v-1.1h9.4" />
+        </mask>
+        <mask id="m7">
+            <path d="M480 128.7l-1.6-.3v-1.7l-.4-1h-2.5l-.2.8h-1.1l-.4-1.1h-2.5l-.9-.6h-4l-.2.9v.7l-.5.5-6.1-.7-4.9-.5-.4-.9h-.7l-.3.7h-.7v-.7h-.8v-.9h-.6v-.5h-.5v.3l-.8.1v.9h-.9v.7l-7.5-.1-.9-.3-15-.4-1.8-.1-.5-.3-.5.3-2.4-.2h-1.7l-2.6-.1v-.5l-5.8-.3-.9-1h-2.3v1.1l-1.6-.2-.6-.5-.8-.8h-.7v-.7l-1.8-.4v-1.4l-1.4-.4v-.6l-1.2-.3v-.6h-1.8v.7l-2.3-.7h-6.1l-.3.5-2.1.4-.3.3-.7-.1-1-.6-2.6-.1-.3.5h-1v-.9l-.6-.3-.5-4.7-.6-.2-.4-1.1-.7.9v-3.5h-1v-1h-1v.4l-1.1.1v6.4l-1.1-.4v-.9l-.5-1v-2.7l-2.4-.2v-2.5l-.6-.3V105l-6.2.2h-3.1l-.7 1.2-.5.5v2.6l-1.3.1.3-10.2H354v1l-1.4-1.2-2 1.5-.2.7-1.1.3-1.4 1.6-.3 6-.3.2-.4 3.4-1.4.2v-3.7l-.5-.2v-4l-1.3-2.4-2.3.1-.9 1-1-.2v-1.4l-2.3-3.7-.5.4 1.8 3.4-.3 1.8-1.2.3-.3-5.1-6.1-.2-.2 8.8-.5.3v1.4l-1.1.1-.4-.9-.4-.6-1.3-.2v-6.3l-.4-.3-1.9-.1-.6.5v4l-.9-.4-.5-.1-1.2 1v2.9l-.6.2v.9l-.6.7h-.5V108l-1.1-.6-1.4.1-.8 1.1-22.7-12.8h-.9v.9l-4.3-.3-.3 1.4-.3.7-1.1.4v5.9l-.7-.2-.6-.1v-4.2l-.5-.4v-4.5h-4.4v4.1l-1.4-3.6-1.4 2.8v.6H276l-.3.4-.2.2h-1.2v4.9l-1.2.1-.5-2.3h-3.3l-.4 1.1-.3 3.2-3.5-.2-.3-.8-.7-.4-.2-2-.9-1.2-1.2-.1-.7.3-1.2 1.3v2.3l-1.5.1-.5.7h-1.8v1.5l-.7.6-.9-.2v-5.2l-2.1-.1-2.7.1-.3 8.8-.7.3-.3.5-.9.1-.3.7-1.6-.1-.9.4-1.4-.2-2.5.5-2.5.1-1.3-.1v-1.5l-.9.2-.2 1.2-1.4.2v-1l-.8.1v.8l-1.4-.6-1.4.3-1.2.2-1.5.1v-5.4l-2.8-.1v-1l-.4.1v-.4l-1.1.2-.4.8-1.3.1-.2 2.3-.6-.1-.4 3-8.2-.3-7.2-.2-4.8-.2-1.2-.6-2.9.6-1.8.5-10.8-.1-3.3-2.1-.7-.7v-4.6l-3.3-.2v3.2l-1.2 1.5-2.5 1.2-2.5.7-1.6-1.4-.4-1.6v-2.4l-1.3-.5-2.2.5-1-.5-.4 1.3h-1.9v-2.3l-5.2-.8-.5 1.3-.9.1v-2.4l-.9-.7h-1.2l-.3 4.4-4.4.4v-.8l-1.4-1.5-2.4 1-.4 2-1.3-.7-1.4-.4-1.2-1.6v-.8l-1.2-.3-.4-1.2-3.7.1v4.2l-1.2 1.1-1.1-.2-1.1.2-.3-3.3-2.9-.1v2.8l-1.5.6v-1.7l-1.1-.1v-4.7l-1-.2v.5l-.6 5.3-1.4.3-.7-.5-1-.9-1.6.3v-1l-1.5.3-3.2 1.3h-1.1v-2l-1.4-1.1-1.3 1.1v3.9l-.6.4-.9-.2-.9-1.3-1.3-1.4v-2.1l-.6-.8-1 1.5-.4 4.7-1.7.1-1.9-.4-2-.4-1.1-1.3-.8-.1-3.9-.2-2.3.1-.9 2.2v1.5l-3.6.6-1.4.6-1.6 1.9-1 1.6-2.3.9-.5 2h-1.1v-2.8l-2.1-1.3-3.3-.1-1.6.8-3 1.2v2.6l-2 .1-2.6.1-2.5-.6-12.9-.9-2.2.1-1-1.3-.7-2.8v-1.3l-2.8.1v5.1l-16.3-.6-14-.2H3.8l-.7-.7-.7-1.7-1-1-1.4-.1V240h480z" />
+        </mask>
+        <mask id="m8">
+            <path d="M0 101.4l43.5-2.2h184.4l1.3-.6.5-1h.8l1 1.1 3.4.1 19.9-.3 1.5-.9h.6l1.6 1.2 70.3-.2 43.4.2.6-1.6v1.1l.8.5h81.7l.4-1h5.2l.4 1 18.7-.5V240H0z" />
+        </mask>
+
+
+
+        <svg id="bg">
+            <image width="480" height="240" xlink:href="http://www.ivang-design.com/svg-load/parallax/flare.jpg" />
+            <text x="50%" y="50%" font-size="20" fill="white" text-anchor="middle" alignment-baseline="middle">SORTING ALGORITHMS</text>
+        </svg>
+        <svg id="p8"><use mask="url(#m8)" xlink:href="#bg" /></svg>
+        <svg id="p7"><use mask="url(#m7)" xlink:href="#bg" /></svg>
+        <svg id="p6"><use mask="url(#m6)" xlink:href="#bg" /></svg>
+        <svg id="p5"><use mask="url(#m5)" xlink:href="#bg" /></svg>
+        <svg id="p4"><use mask="url(#m4)" xlink:href="#bg" /></svg>
+        <svg id="p3"><use mask="url(#m3)" xlink:href="#bg" /></svg>
+        <svg id="p2"><use mask="url(#m2)" xlink:href="#bg" /></svg>
+        <svg id="p1"><use mask="url(#m1)" xlink:href="#bg" /></svg>
+    </svg>
+
+
+
+
+
+
+    <div class="page">
+        <header>
+            <div class="parallax">
+                <div class="bg"><svg viewBox="0 0 480 240"><use xlink:href="#bg" /></svg></div>
+                <div class="p8"><svg viewBox="0 0 480 240"><use xlink:href="#p8" /></svg></div>
+                <div class="p7"><svg viewBox="0 0 480 240"><use xlink:href="#p7" /></svg></div>
+                <div class="p6"><svg viewBox="0 0 480 240"><use xlink:href="#p6" /></svg></div>
+                <div class="p5"><svg viewBox="0 0 480 240"><use xlink:href="#p5" /></svg></div>
+                <div class="p4"><svg viewBox="0 0 480 240"><use xlink:href="#p4" /></svg></div>
+                <div class="p3"><svg viewBox="0 0 480 240"><use xlink:href="#p3" /></svg></div>
+                <div class="p2"><svg viewBox="0 0 480 240"><use xlink:href="#p2" /></svg></div>
+                <div class="p1"><svg viewBox="0 0 480 240"><use xlink:href="#p1" /></svg></div>
+            </div>
+        </header>
+
+
+        <main>
+            <h1>
+                <img src="~/lib/pic/ad2.png" alt="Your Image Description" class="logo">SORTING ALGORITHMS
+            </h1>
+            <a class="no-iframe" href="https://codepen.io/jakob-e/debug/ELqeRM/" target="_blank">Open in debug mode</a>
+            <p>Sorting algorithms are crucial in organizing and arranging data in a specific order, enabling efficient search and retrieval operations. Similar to search algorithms, sorting algorithms vary in complexity and applicability to different scenarios.</p>
+            <p>One of the basic sorting algorithms is the bubble sort, which iteratively compares and swaps adjacent elements until the entire dataset is sorted. While simple to understand, bubble sort's time complexity makes it less suitable for large datasets. More advanced sorting algorithms, such as merge sort and quicksort, divide the dataset into smaller segments, sort them individually, and then combine them for a more efficient overall sorting process.</p>
+            <p>These algorithms often exhibit better performance for larger datasets and are widely used in various applications, including database management and data analysis.</p>
+
+
+            <h2>SORTING ALGORITHMS</h2>
+            <p>Sorting algorithms are fundamental in organizing and arranging data systematically, facilitating efficient search and retrieval operations. These algorithms, ranging in complexity, play a pivotal role in diverse scenarios.</p>
+            <p>Among basic sorting algorithms is the bubble sort, which iteratively compares and swaps adjacent elements until the entire dataset is sorted. While conceptually simple, bubble sort's time complexity makes it less suitable for large datasets. Advanced sorting algorithms like merge sort and quicksort divide the dataset into smaller segments, sorting them individually before combining for a more efficient overall sorting process. These algorithms demonstrate superior performance for larger datasets and find widespread use in applications like database management and data analysis.</p>
+
+        </main>
+        <div class="ad">
+            <div class="wrapper">
+                <i id="left" class="fa-solid fa-angle-left"></i>
+                <ul class="carousel">
+                    <a asp-controller="SortAlgorithm" asp-action="Cocktail">
+                    <li class="card">
+
+                        <h2>Cocktail</h2>
+                        <span>Sort</span>
+                    </li>
+                    </a>
+                    <a asp-controller="SortAlgorithm" asp-action="Tag">
+                    <li class="card">
+
+                        <h2>Tag</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Comb">
+                    <li class="card">
+
+                        <h2>Comb</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Pancake">
+                    <li class="card">
+
+                        <h2>Pancake</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Heap">
+                    <li class="card">
+
+                        <h2>Heap</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Counting">
+                    <li class="card">
+
+                        <h2>Counting</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Cycle">
+                    <li class="card">
+
+                        <h2>Cycle</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Bucket">
+                    <li class="card">
+
+                        <h2>Bucket</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Selection">
+                    <li class="card">
+
+                        <h2>Selection</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Bubble">
+                    <li class="card">
+
+                        <h2>Bubble</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Insertion">
+                    <li class="card">
+
+                        <h2>Insertion</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Merge">
+                    <li class="card">
+
+                        <h2>Merge</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Stooge">
+                    <li class="card">
+
+                        <h2>Stooge</h2>
+                        <span>Sort</span>
+                    </li></a>
+
+         
+                    <a asp-controller="SortAlgorithm" asp-action="Bitonic">
+                    <li class="card">
+
+                        <h2>Bitonic</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Pigeonhole">
+                    <li class="card">
+
+                        <h2>Pigeonhole</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Quick">
+                    <li class="card">
+
+                        <h2>Quick</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Radix">
+                    <li class="card">
+
+                        <h2>Radix</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Shell">
+                    <li class="card">
+
+                        <h2>Shell</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Sleep">
+                    <li class="card">
+
+                        <h2>Sleep</h2>
+                        <span>Sort</span>
+                    </li></a>
+                    <a asp-controller="SortAlgorithm" asp-action="Gnome">
+                    <li class="card">
+
+                        <h2>Gnome</h2>
+                        <span>Sort</span>
+                    </li></a>
+
+                </ul>
+                <i id="right" class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="~/js/project11jss.js"></script>
+    <script src="~/js/project1jss.js"></script>
+</body>
+</html>
+
+<a asp-controller="Home" asp-action="Home">back</a>

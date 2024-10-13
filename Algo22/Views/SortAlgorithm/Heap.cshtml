@@ -1,0 +1,319 @@
+﻿<html>
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+<body>
+    <div class="*">
+    </div>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Heap Sort </h1>
+
+                    <p>
+                        Heap Sort is a comparison-based sorting algorithm that operates by first building a binary heap from the input data
+                        and then repeatedly extracting the maximum element from the heap and rebuilding the heap.
+                        It was first proposed by J.W.J. Williams in 1964 and later refined and published by R. W. Floyd in 1969.
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Heap Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class HeapSort {
+public static void heapSort(int arr[]) {
+int n = arr.length;
+// Build max heap
+for (int i = n / 2 - 1; i >= 0; i--) {
+heapify(arr, n, i);
+}
+// Extract elements from the heap one by one
+for (int i = n - 1; i > 0; i--) {
+// Swap the root (max element) with the last element
+int temp = arr[0];
+arr[0] = arr[i];
+arr[i] = temp;
+// Call heapify on the reduced heap
+heapify(arr, i, 0);
+}
+}
+// To heapify a subtree rooted with node i which is an index in arr[]
+static void heapify(int arr[], int n, int i) {
+int largest = i; // Initialize the root as the largest
+int leftChild = 2 * i + 1; // Left child
+int rightChild = 2 * i + 2; // Right child
+// If left child is larger than root
+if (leftChild < n && arr[leftChild] > arr[largest]) {
+largest = leftChild;
+}
+// If right child is larger than the largest so far
+if (rightChild < n && arr[rightChild] > arr[largest]) {
+largest = rightChild;
+}
+// If the largest is not the root
+if (largest != i) {
+// Swap the root with the largest element
+int swap = arr[i];
+arr[i] = arr[largest];
+arr[largest] = swap;
+// Recursively heapify the affected sub-tree
+heapify(arr, n, largest);
+}
+}
+// Function to print an array
+static void printArray(int arr[]) {
+int n = arr.length;
+for (int i = 0; i < n; ++i) {
+System.out.print(arr[i] + " ");
+}
+System.out.println();
+}
+// Driver code
+public static void main(String args[]) {
+int arr[] = {12, 11, 13, 5, 6, 7};
+int n = arr.length;
+System.out.println("Original Array:");
+printArray(arr);
+heapSort(arr);
+System.out.println("Sorted Array:");
+printArray(arr);
+}
+}
+</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Heap Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea name="code" id="code" class="area">
+1 function heapSort(arr):
+2 n = length(arr)
+3 // Build max heap
+4 for i from n / 2 - 1 down to 0:
+5 heapify(arr, n, i)
+6 // Extract elements from the heap one by one
+7 for i from n - 1 down to 1:
+8 // Swap the root (max element) with the last element
+9 swap(arr[0], arr[i])
+10 // Call heapify on the reduced heap
+11 heapify(arr, i, 0)
+13 function heapify(arr, n, i):
+14 largest = i // Initialize the root as the largest
+15 leftChild = 2 * i + 1 // Left child
+16 rightChild = 2 * i + 2 // Right child
+17 // If left child is larger than root
+18 if leftChild < n AND arr[leftChild] > arr[largest]:
+19 largest = leftChild
+20 // If right child is larger than the largest so far
+21 if rightChild < n AND arr[rightChild] > arr[largest]:
+22 largest = rightChild
+23 // If the largest is not the root
+24 if largest ≠ i:
+25 // Swap the root with the largest element
+26 swap(arr[i], arr[largest])
+27 // Recursively heapify the affected sub-tree
+28 heapify(arr, n, largest)
+30 // Function to swap two elements
+31 function swap(a, b):
+32 temp = a
+33 a = b
+34 b = temp
+36 // Example usage
+37 arr = [12, 11, 13, 5, 6, 7]
+38 print("Original Array:")
+39 printArray(arr)
+40 heapSort(arr)
+41 print("Sorted Array:")
+42 printArray(arr)
+</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step ?</h1>
+                    <p>
+                        Heap Sort is a sorting algorithm that operates by building and manipulating a binary heap data structure. The algorithm initially constructs a heap,
+                        ensuring the parent's element is greater (or smaller) than its children's elements.
+                        The largest element is successively extracted and placed at the end of the list, reducing the heap's size until the entire list is sorted.
+                        Heap Sort is known for its in-place sorting, using the original memory space, and it achieves a time complexity of O(n log n) in the worst-case scenario.
+                        Despite its efficiency for large datasets, Heap Sort is not as commonly used in practice as some other sorting algorithms.
+                    </p>
+
+                </div>
+                <div class="content">
+
+                    <p>
+                        <img src="~/lib/jquery-validation-unobtrusive/gif/heap sort visualization.gif" width="450px" height="350px" />
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Consistent Performance:
+
+                        Heap Sort has a consistent time complexity of O(n log n) for worst, average, and best cases, making it suitable for large datasets.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅In-Place Sorting:
+
+                        It is an in-place sorting algorithm, meaning it doesn't require additional memory for auxiliary data structures. The sorting is done directly in the input array.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Optimal for Priority Queues:
+
+                        Heap Sort is often used to implement priority queues due to its ability to efficiently extract the maximum (or minimum) element.
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not Stable:
+
+                        Heap Sort is not a stable sorting algorithm. If there are equal elements, their original order might not be preserved after sorting.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not Cache-Friendly:
+
+                        The algorithm's access pattern is not cache-friendly compared to some other algorithms like quicksort, potentially resulting in slower performance.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Complexity in Implementation:
+
+                        Implementing Heap Sort can be more complex than some other sorting algorithms, requiring careful handling of heap construction and heapification.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>
+

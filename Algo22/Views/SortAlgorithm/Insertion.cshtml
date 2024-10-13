@@ -1,0 +1,254 @@
+﻿<html>
+
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Cocktail Sort </h1>
+
+                    <p>
+                        Insertion Sort is a simple and efficient sorting algorithm that
+                        works well
+                        for small or partially sorted datasets. It's often used as a
+                        building block for other algorithms or as a final sorting step when
+                        data is nearly sorted.
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Cocktail Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class InsertionSort {
+public static void main(String[] args) {
+int[] array = {8, 3, 12, 4, 6, 11, 15, 14, 7, 9};
+System.out.println("Original Array:");
+printArray(array);
+insertionSort(array);
+System.out.println("\nSorted Array:");
+   printArray(array);
+    }
+static void insertionSort(int arr[]) {
+   int n = arr.length;
+   for (int i = 1; i < n; ++i) {
+   int key = arr[i];
+   int j = i - 1;
+   while (j >= 0 && arr[j] > key) {
+   arr[j + 1] = arr[j];
+   j = j - 1;
+            }
+arr[j + 1] = key;
+        }
+    }
+static void printArray(int arr[]) {
+   int n = arr.length;
+   for (int i = 0; i < n; ++i)
+   System.out.print(arr[i] + " ");
+   System.out.println();
+    }
+}
+
+
+
+
+
+
+                                </textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Cocktail Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea readonly="" name="code" id="code" class="area">
+INSERTION_SORT
+1. for i in range from 1 to n:
+2. current_element = A[i]
+3. j = i - 1
+4. while (j >= 0 and A[j] > current_element):
+5. A[j+1] = A[j]
+6. j -= 1
+7. end while
+8. A[j+1] = current_element
+9. end for
+}</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step ?</h1>
+                    <p>
+                        Start with the second element: Consider the first element as already sorted.
+                        <br />Iterate through the remaining elements:
+                        <br /> Pick the next unsorted element.
+                        <br /> Compare it with the elements to its left that are already sorted.
+                        <br /> "Walk" it back to its correct position by shifting larger elements to the right until it finds its place.
+                        <br /> Repeat for all elements: Continue this process until all elements are in their correct positions, resulting in a sorted list.
+                    </p>
+
+                </div>
+                <div class="content">
+
+                    <p>
+                        <img src="~/lib/jquery-validation-unobtrusive/gif/insertion sort visualization.gif" width="450px" height="350px" />
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Simple to understand and implement:
+                        Its logic is straightforward, making it easy to code and learn.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Efficient for small or partially sorted lists:
+                        It can outperform more complex algorithms in these cases.
+                    </p>
+
+                </div>
+
+
+
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Less efficient for large, unsorted lists:
+                        Its time complexity of O(n^2) can become a bottleneck for large datasets.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not as efficient as other algorithms for large datasets:
+                        Algorithms like merge sort or quicksort generally outperform insertion sort for large, unsorted lists.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>

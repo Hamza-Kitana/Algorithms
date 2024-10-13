@@ -1,0 +1,270 @@
+﻿<html>
+
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+
+
+<body>
+
+    <div class="*">
+        <h1>Shell Sort</h1>
+    </div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Shell Sort </h1>
+
+                    <p>
+
+
+                        It's an in-place comparison sorting algorithm that builds upon insertion sort to achieve better
+                        performance.
+                        It does this by first sorting elements that are far apart, gradually reducing the gap between
+                        those elements until
+                        the entire list is sorted.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Cocktail Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class ShellSort {
+public static void main(String[] args) {
+   int[] array = {64, 25, 12, 22, 11};
+   System.out.println("Original Array:");
+   printArray(array);
+   shellSort(array);
+   System.out.println("\nSorted Array:");
+   printArray(array);
+    }
+static void shellSort(int arr[]) {
+        int n = arr.length;
+        for (int gap = n / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < n; i++) {
+                int temp = arr[i];
+                int j;
+                for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
+                 arr[j] = arr[j - gap];
+                }
+                arr[j] = temp;
+            }
+        }
+    }
+// Utility method to print an array
+static void printArray(int arr[]) {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i)
+         System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+}
+
+}</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Cocktail Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea readonly="" name="code" id="code" class="area">
+SHELL_SORT
+1. shell_sort(A)
+2. gap = len(A) // 
+3. while gap > 0:
+4. for i in range from gap to len(A):
+5. temp = A[i]
+6. j = i - gap
+7. while j >= 0 and temp < A[j]:
+8. A[j + gap] = A[j]
+9. j -= gap
+10. end while
+11. A[j + gap] = temp
+12. gap //= 2
+13. end for
+14. end shell_sort
+
+}</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step</h1>
+                    <p>
+                        Choose a gap sequence: This sequence determines the distances between elements to be compared in each pass. Common choices include the original Shell's sequence (n/2, n/4, ..., 1) or the more efficient Pratt sequence.
+
+                        Perform multiple "h-sorting" passes: For each gap value h in the sequence:
+
+                        Divide the list into sublists with elements spaced h positions apart.
+                        Perform insertion sort on each sublist, comparing elements that are h positions apart.
+                        Repeat with smaller gaps: After each pass with a gap of h, move to a smaller gap value in the sequence, continuing until the gap is 1.
+
+                        Final insertion sort: When the gap is 1, the algorithm essentially performs a standard insertion sort, ensuring the entire list is sorted.
+                    </p>
+
+                </div>
+                <div class="content">
+
+                    <p>
+                        <img src="~/lib/jquery-validation-unobtrusive/gif/shell sort algorithm.gif" width="450px" height="350px" />
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advanteg :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+                        ✅Faster than insertion sort:
+                        Typically outperforms insertion sort, especially for larger datasets.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+                        ✅In-place:
+                        Doesn't require additional memory for sorting.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+                        ✅Efficient for partially sorted data.
+                        Simple to implement: Relatively straightforward to code.
+                    </p>
+
+
+
+                </div>
+                <div class="content">
+                    <h1>Disadvanteg :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not as efficient as other fast algorithms:
+                        Quicksort, merge sort, and heap sort generally outperform Shell sort for large datasets.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Unstable:
+                        Might not preserve the relative order of equal elements.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Worst-case complexity:
+                        Can be worse than O(n log n) in certain cases.<br />
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js
+"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+</body>
+</html>

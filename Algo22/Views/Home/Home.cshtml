@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Algorithm</title>
+
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+   
+    
+    <link rel="website icon" type="png" href="https://media.licdn.com/dms/image/C560BAQF6J6qSayubtg/company-logo_200_200/0/1661530241754/the_algorithm_logo?e=2147483647&v=beta&t=ljV4E5j24FA6OudAZoRTA3KHKK2qdPSIVg1QDrjDkAM">
+</head>
+<body>
+    
+                                	<div class="shadow-title parallax-top-shadow">work</div>								
+<div class="section-parallax parallax-00" style="background-image: url('http://www.ivang-design.com/svg-load/parallax/parallax-0.png');"></div>
+<div class="section-parallax parallax-01" style="background-image: url('http://www.ivang-design.com/svg-load/parallax/parallax-01.png');"></div>
+  
+  <div class="section full-height">
+    <div class="section-title-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center parallax-fade-top">	
+            <h1 style="text-align: center;">Algorithms</h1>
+          </div>
+        </div>	
+      </div>
+    </div>
+  </div>
+  <div class="zab">
+    <p style="margin: 0;">
+            Imagine a detailed recipe, not for baking a cake, but for solving a problem. That's essentially what an algorithm is! It's a set of clear, step-by-step instructions, like a flowchart, that tells a computer how to approach and solve a specific task. Think of it as the brain behind complex calculations, data processing, and even decision-making in machines. These invisible workhorses power everything from sorting your search results to recommending movies you'll love, and they come in all shapes and sizes, from simple sorting algorithms like bubble sort (picture bubbles gently rising to the top) to complex machine learning algorithms that learn and adapt like living things.
+    </p>
+  
+</div>
+  
+  <div class="section full-height z-bigger">
+        <h1 style="text-align: center;    bottom: -168px;
+    position: relative;">
+            Algorithms Types
+        </h1>
+    <ul class="case-study-wrapper">
+	  <li class="case-study-name">
+                <a asp-controller="Type" asp-action="Search" class="hover-target">Search </a>
+      </li>
+      <li class="case-study-name">
+                <a asp-controller="Type" asp-action="Sorting" class="hover-target">Sorting </a>
+      </li>
+      <li class="case-study-name">
+                <a asp-controller="Type" asp-action="Cryptographic" class="hover-target">Cryptographic </a>
+      </li>
+      <li class="case-study-name">
+                <a asp-controller="Type" asp-action="Compression" class="hover-target">Compression </a>
+      </li>
+	  
+	  
+
+    </ul>
+    <ul class="case-study-images">
+      <li>
+        <div class="img-hero-background">
+          <img src="http://www.ivang-design.com/svg-load/parallax/light.jpg" alt="">
+        </div>  
+        <div class="hero-number-back">01</div> 
+        <div class="hero-number">01</div> 
+        <div class="hero-number-fixed">04</div> 
+        <div class="case-study-title">Search algorithms help find things in a list or group of items</div> 
+      </li>
+      <li>
+        <div class="img-hero-background">
+          <img src="http://www.ivang-design.com/svg-load/parallax/flare.jpg" alt="">
+        </div> 
+        <div class="hero-number-back">02</div> 
+        <div class="hero-number">02</div>  
+        <div class="case-study-title">Sorting algorithms help organize items in order</div> 
+      </li>
+      <li>
+        <div class="img-hero-background">
+          <img src="http://www.ivang-design.com/svg-load/parallax/nature.jpg" alt="">
+        </div>
+        <div class="hero-number-back">03</div>  
+        <div class="hero-number">03</div> 
+        <div class="case-study-title">keep information safe by using special math tricks</div> 
+      </li>
+      <li>
+        <div class="img-hero-background">
+          <img src="http://www.ivang-design.com/svg-load/parallax/fire.jpg" alt="">
+        </div> 
+        <div class="hero-number-back">04</div> 
+        <div class="hero-number">04</div> 
+        <div class="case-study-title">make files smaller so they take up less space</div> 
+      </li>
+    </ul>	
+  </div>
+  
+  
+  
+  <!--Scroll back to top
+    ================================================== -->
+  
+  <div class="scroll-to-top hover-target"></div>
+  
+  <!--Page cursor
+    ================================================== -->
+  
+  <div class='cursor' id="cursor"></div>
+  <div class='cursor2' id="cursor2"></div>
+  <div class='cursor3' id="cursor3"></div>
+  
+  <!--Link to page
+    ================================================== -->
+
+    <a asp-controller="Account" asp-action="Login" class="link-to-portfolio hover-target" target=” _blank”></a>
+
+@*     <a asp-controller="Account" asp-action="Register" class="link-to-portfolio2 hover-target" target=” _blank”></a>
+ *@
+    
+  
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+
+
+
+
+        (function ($) {
+            "use strict";
+
+            //Parallax
+
+            function scrollBanner() {
+                $(document).on('scroll', function () {
+                    var scrollPos = $(this).scrollTop();
+                    $('.parallax-fade-top').css({
+                        'top': (scrollPos / 2) + 'px',
+                        'opacity': 1 - (scrollPos / 700)
+                    });
+                    $('.parallax-00').css({
+                        'top': (scrollPos / -3.5) + 'px'
+                    });
+                    $('.parallax-01').css({
+                        'top': (scrollPos / -2.8) + 'px'
+                    });
+                    $('.parallax-top-shadow').css({
+                        'top': (scrollPos / -2) + 'px'
+                    });
+                });
+            }
+            scrollBanner();
+
+            
+
+            //Scroll back to top
+
+            $(document).ready(function () {
+                var offset = 300;
+                var duration = 400;
+                jQuery(window).on('scroll', function () {
+                    if (jQuery(this).scrollTop() > offset) {
+                        jQuery('.scroll-to-top').addClass('active-arrow');
+                    } else {
+                        jQuery('.scroll-to-top').removeClass('active-arrow');
+                    }
+                });
+                jQuery('.scroll-to-top').on('click', function (event) {
+                    event.preventDefault();
+                    jQuery('html, body').animate({ scrollTop: 0 }, duration);
+                    return false;
+                })
+
+
+                /* Hero Case study images */
+
+                $('.case-study-name:nth-child(1)').on('mouseenter', function () {
+                    $('.case-study-name.active').removeClass('active');
+                    $('.case-study-images li.show').removeClass("show");
+                    $('.case-study-images li:nth-child(1)').addClass("show");
+                    $('.case-study-name:nth-child(1)').addClass('active');
+                })
+                $('.case-study-name:nth-child(2)').on('mouseenter', function () {
+                    $('.case-study-name.active').removeClass('active');
+                    $('.case-study-images li.show').removeClass("show");
+                    $('.case-study-images li:nth-child(2)').addClass("show");
+                    $('.case-study-name:nth-child(2)').addClass('active');
+                })
+                $('.case-study-name:nth-child(3)').on('mouseenter', function () {
+                    $('.case-study-name.active').removeClass('active');
+                    $('.case-study-images li.show').removeClass("show");
+                    $('.case-study-images li:nth-child(3)').addClass("show");
+                    $('.case-study-name:nth-child(3)').addClass('active');
+                })
+                $('.case-study-name:nth-child(4)').on('mouseenter', function () {
+                    $('.case-study-name.active').removeClass('active');
+                    $('.case-study-images li.show').removeClass("show");
+                    $('.case-study-images li:nth-child(4)').addClass("show");
+                    $('.case-study-name:nth-child(4)').addClass('active');
+                })
+                $('.case-study-name:nth-child(1)').trigger('mouseenter')
+
+            });
+
+        })(jQuery);
+    </script>
+</body>
+
+</html>

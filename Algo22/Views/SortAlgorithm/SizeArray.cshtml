@@ -1,0 +1,92 @@
+﻿@model Details
+
+<link rel="stylesheet" href="~/css/SizeArray.css" asp-append-version="true" />
+
+
+
+
+
+
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="bottun1.css">
+</head>
+<body>
+    <a asp-controller="Login" asp-action="Login" class="link-to-portfolio hover-target" target=” _blank”></a>
+
+  <div class="aa">
+        An array is a data structure that allows you to store a collection of data of the same type under a single variable name. For example, you can use an array to store a list of student names, grades, or phone numbers.
+
+        An array consists of a number of elements, each of which is assigned a unique number called an index. Arrays typically start storing at index zero and end at a specified end point, depending on the need. You can access a specific element in an array using its index.
+
+        Arrays help with organization, quick access, efficiency, and data diversity. They are used in programming, science, and business.
+  </div>
+  <div class="bb">
+
+        المصفوفة هي نوع من هياكل البيانات التي تسمح لك بتخزين مجموعة من البيانات ذات النوع نفسه تحت اسم متغير واحد. على سبيل المثال، يمكنك استخدام مصفوفة لتخزين قائمة بأسماء الطلاب أو درجاتهم أو أرقام الهواتف الخاصة به.
+
+        تتكون المصفوفة من عدد من العناصر، ويُعرف كل عنصر برقم مخصص له يسمى العنوان. عادةً ما تبدأ المصفوفة بالتخزين في الموقع صفر وتنتهي بنهاية محددة حسب الحاجة. يمكنك الوصول إلى عنصر معين في المصفوفة باستخدام عنوانه.
+
+        تساعد المصفوفات في التنظيم والوصول السريع والكفاءة وتنوع البيانات. تستخدم في حالات البرمجة والعلوم والأعمال.
+  </div>
+    
+    <div class="center">
+
+    <div class="login-box">
+        <h2>Size Of Array</h2>
+        <form asp-action="SizeArray">
+            <div class="user-box">
+
+                <input asp-for="SizeArray"   placeholder="Enter The Number">
+
+            </div>
+
+            <div>
+                <center>
+                    <a href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <button class="hh" type="submit">Create  Array</button>
+                    </a>
+                </center>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <a asp-controller="Type" asp-action="Sorting" class="enter-button">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             fill="none"
+             viewBox="0 0 40 27"
+             class="arrow">
+            <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+            <line stroke-width="2"
+                  stroke="white"
+                  y2="1.41537"
+                  x2="10.4324"
+                  y1="14.2433"
+                  x1="1.18869"></line>
+            <line stroke-width="2"
+                  stroke="white"
+                  y2="13.6007"
+                  x2="1.20055"
+                  y1="26.2411"
+                  x1="10.699"></line>
+            <line stroke="white"
+                  y2="14.3133"
+                  x2="1.07325"
+                  y1="13.6334"
+                  x1="0.33996"></line>
+            <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+        </svg>
+        Back
+    </a>
+</body>
+</html>
+
+
+
+

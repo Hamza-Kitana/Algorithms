@@ -1,0 +1,299 @@
+﻿<html>
+
+<head>
+    <link href="~/css/Allalgo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/collection/components/icon/icon.min.css
+" rel="stylesheet">
+</head>
+
+<body>
+    <div class="*">
+    </div>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>The Pancake Sort </h1>
+
+                    <p>
+                        Pancake Sort is a sorting algorithm that belongs to the family of sorting algorithms known as "prefix reversal algorithms."
+                        It is designed to sort a list by flipping or reversing elements'
+                        positions using a spatula-like operation, where a prefix of the list is reversed.
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Code :</h1>
+                    <div class="content">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <div class="top">
+                                    <div class="circle">
+                                        <span class="red circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="yellow circle2"></span>
+                                    </div>
+                                    <div class="circle">
+                                        <span class="green circle2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <p id="title2">Pancake Sort Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <textarea readonly="" name="code" id="code" class="area">
+public class PancakeSort {
+// Function to flip the first k elements of an array
+static void flip(int arr[], int k) {
+int temp, i = 0;
+while (i < k) {
+temp = arr[i];
+arr[i] = arr[k];
+arr[k] = temp;
+i++;
+k--;
+}
+}
+// Function to find the index of the maximum element in the array
+static int findMaxIndex(int arr[], int n) {
+int maxIndex = 0;
+for (int i = 0; i < n; i++) {
+if (arr[i] > arr[maxIndex]) {
+maxIndex = i;
+}
+}
+return maxIndex;
+}
+// Function to perform Pancake Sort on the array
+static void pancakeSort(int arr[]) {
+int n = arr.length;
+for (int currSize = n; currSize > 1; currSize--) {
+// Find the index of the maximum element in the unsorted part of the array
+int maxIndex = findMaxIndex(arr, currSize);
+// Move the maximum element to the beginning
+if (maxIndex != currSize - 1) {
+flip(arr, maxIndex);
+flip(arr, currSize - 1);
+}
+}
+}
+// Function to print an array
+static void printArray(int arr[]) {
+for (int value : arr) {
+System.out.print(value + " ");
+        }
+System.out.println();
+    }
+
+public static void main(String[] args) {
+int arr[] = {64, 34, 25, 12, 22, 11, 90};
+System.out.println("Original Array:");
+printArray(arr);
+// Perform Pancake Sort
+pancakeSort(arr);
+System.out.println("Sorted Array:");
+printArray(arr);
+}
+}
+}</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Pseudocode:</h1>
+                    <div class="card">
+                        <div class="header">
+                            <div class="top">
+                                <div class="circle">
+                                    <span class="red circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="yellow circle2"></span>
+                                </div>
+                                <div class="circle">
+                                    <span class="green circle2"></span>
+                                </div>
+                                <div class="title">
+                                    <p id="title2">Pancake Sort Pseudocode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <textarea name="code" id="code" class="area">
+1  function pancakeSort(arr):
+2  n = length(arr)
+3  for currSize from n down to 2:
+4  maxIndex = findMaxIndex(arr, currSize)
+5  if maxIndex ≠ currSize - 1:
+6  flip(arr, maxIndex)
+7  flip(arr, currSize - 1)
+8  function flip(arr, k):
+9  i = 0
+10 while i < k:
+11 temp = arr[i]
+12 arr[i] = arr[k]
+13 arr[k] = temp
+14 i++
+15 k--
+16 function findMaxIndex(arr, n):
+17 maxIndex = 0
+18 for i from 0 to n - 1:
+19 if arr[i] > arr[maxIndex]:
+20 maxIndex = i
+21 return maxIndex
+22 # مثال على الاستخدام:
+23 arr = [64, 34, 25, 12, 22, 11, 90]
+24 print("Original Array:")
+25 printArray(arr)
+26 pancakeSort(arr)
+27 print("Sorted Array:")
+28 printArray(arr)
+</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>How To Arrange Step By Step ?</h1>
+                    <p>
+                        Pancake Sort initiates by determining the size of the list (n) and begins a filtering cycle at this size.
+                        In each pass, the algorithm searches for the largest unsorted element in the unsorted part of the list.
+                        This is achieved by utilizing the `findMaxIndex` function, which returns the index of the largest element.
+                        Subsequently, a flipping operation is executed using the `flip` function, reversing the portion of the list from the beginning to the position of the identified largest element.
+                        Another flip operation is then performed using the same method to move the largest element to the end of the list.
+                        These operations are repeated until the entire list is sorted.
+                        The size of the passes is reduced with each iteration, and the process is repeated until the sorting is completed.
+                        This description can be easily translated into pseudo code for implementation in a specific programming language.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+                <div class="content">
+                    <h1>Advantage :</h1>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Simplicity:
+
+                        Pancake Sort is conceptually simple and easy to understand. The algorithm relies on basic operations like flipping and finding the maximum element.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅In-Place Sorting:
+
+                        Pancake Sort is an in-place sorting algorithm, meaning it doesn't require additional memory for auxiliary data structures. It sorts the array in its original memory space.
+                    </p>
+                    <p class="ulAdv" style="color : #06ff06;">
+
+                        ✅Variable-Sized Flips:
+
+                        The use of variable-sized flips allows Pancake Sort to adapt to different situations, potentially leading to efficient sorting in specific cases.
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="content">
+                    <h1>Disadvantage :</h1>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Inefficiency for Large Lists:
+
+                        Pancake Sort has a time complexity of O(n^2), making it less efficient compared to other sorting algorithms like quicksort or mergesort, especially for large datasets.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Lack of Stability:
+
+                        Pancake Sort is not a stable sorting algorithm. If there are equal elements, their original order might not be preserved after sorting.
+                    </p>
+                    <p class="uldis" style="color:#ff6548;">
+                        ❌Not Widely Used:
+
+                        Despite its simplicity, Pancake Sort is not commonly used in practice due to its inefficiency for large datasets. More advanced and efficient sorting algorithms are preferred in real-world applications.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <nav class="nav-carousel">
+
+            <a class="enter-a">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 40 27"
+                     class="arrow">
+                    <line stroke-width="2" stroke="white" y2="14" x2="40" y1="14" x1="1"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="1.41537"
+                          x2="10.4324"
+                          y1="14.2433"
+                          x1="1.18869"></line>
+                    <line stroke-width="2"
+                          stroke="white"
+                          y2="13.6007"
+                          x2="1.20055"
+                          y1="26.2411"
+                          x1="10.699"></line>
+                    <line stroke="white"
+                          y2="14.3133"
+                          x2="1.07325"
+                          y1="13.6334"
+                          x1="0.33996"></line>
+                    <line stroke-width="2" stroke="white" y2="13" x2="39" y1="8" x1="39"></line>
+                </svg>
+                Back
+            </a>
+
+            <div class="btn button-prev">
+                <ion-icon name="caret-back-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <div class="btn button-next">
+                <ion-icon name="caret-forward-outline"></ion-icon><span class="btn-border"></span>
+            </div>
+            <a asp-controller="SortAlgorithm" asp-action="SizeArray" class="button" data-text="Awesome">
+                <span class="actual-text">try it</span>
+                <span aria-hidden="true" class="front-text">tryit  </span>
+            </a>
+        </nav>
+
+    </div>
+
+    <div id="particles-js"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/esm/ionicons.min.js"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="~/js/SortAlgorthm.js"></script>
+
+</body>
+</html>
+
